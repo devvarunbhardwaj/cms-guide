@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CMS Updates · October 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{--red:#D7101A;--ink:#111;--grey:#f3f3f3;--text:#222;--muted:#6b6b6b;--line:#e6e6e6;--bg:#fff;
+  --c-new:#047857;--c-chg:#0369a1;--c-fix:#b45309}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 15px/1.55 Inter,system-ui,sans-serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+.kick{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:var(--grey);padding:1px 5px;white-space:nowrap}
+.bar{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff}
+.bar .wrap{display:flex;gap:16px;align-items:center;padding-top:10px;padding-bottom:10px}
+.bar nav{display:flex;gap:16px;overflow-x:auto;white-space:nowrap;flex:1}
+.bar a{color:#fff;text-decoration:none;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.8}
+.bar a:hover{opacity:1;text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:6px}
+.hero{padding:40px 0 16px}
+h1{font:600 clamp(28px,4vw,40px)/1.15 Inter,system-ui,sans-serif;margin:12px 0 14px;max-width:900px}
+h1 i{font:italic 400 1em/1 'Playfair Display',Georgia,serif;color:var(--red)}
+.lede{max-width:720px;color:var(--muted);font-size:17px;margin:0}
+section{padding:40px 0 8px}
+h2{font:600 clamp(22px,3vw,28px)/1.2 Inter,system-ui,sans-serif;margin:8px 0 6px}
+.sub{color:var(--muted);max-width:760px;margin:0 0 18px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:24px}
+.stats div{background:var(--grey);padding:18px}
+.stats .num{font:600 30px/1 Inter,sans-serif;margin-bottom:6px}
+.tw{overflow-x:auto;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:11px 12px;border-bottom:1px solid var(--line)}
+th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;background:#fafafa}
+tr:last-child td{border-bottom:0}
+td.f{width:26%}
+td.e{width:30%;color:var(--muted)}
+.chip{display:inline-block;padding:1px 7px;font-size:11px;font-weight:600;color:#fff;letter-spacing:.04em;margin-right:6px;vertical-align:1px}
+.c-new{background:var(--c-new)}.c-chg{background:var(--c-chg)}.c-fix{background:var(--c-fix)}
+.path{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+.steps{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);padding:0;margin:0;counter-reset:s}
+.steps li{list-style:none;background:#fff;padding:16px 20px 16px 64px;position:relative;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:20px;top:14px;width:28px;height:28px;background:var(--red);color:#fff;font-weight:600;display:grid;place-items:center;font-size:13px}
+.steps .path{margin-top:4px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin:16px 0 0}
+footer{padding:48px 0 64px;color:var(--muted);font-size:13px}
+@media (max-width:720px){.stats{grid-template-columns:1fr 1fr}td.f,td.e{width:auto}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><span class="kick" style="color:#fff">CU Lucknow · CMS</span>
+<nav><a href="../">All guides</a><a href="#action">Action needed</a><a href="#programme">Programme</a><a href="#defaults">Program Defaults</a><a href="#school">School</a><a href="#home">Home &amp; site</a><a href="#auto">Automatic</a></nav></div></div>
+
+<div class="wrap">
+<div class="hero">
+  <div class="kick">Release notes · 22–23 October 2026</div>
+  <h1>CMS <i>updates</i> for the data team</h1>
+  <p class="lede">New fields, changed fields, and what each one does on the website. The last column says what the page shows when the field is left empty.</p>
+  <div class="stats">
+    <div><div class="num">11</div>new fields</div>
+    <div><div class="num">4</div>fields changed</div>
+    <div><div class="num">4</div>website fixes</div>
+    <div><div class="num">5</div>entries to fill</div>
+  </div>
+  <div class="legend"><span><span class="chip c-new">NEW</span>new field</span><span><span class="chip c-chg">CHANGED</span>works differently now</span><span><span class="chip c-fix">FIX</span>website behaviour, no field</span></div>
+</div>
+
+<section id="action">
+  <div class="kick">Before the next publish</div>
+  <h2>Action needed</h2>
+  <p class="sub">These are missing in the CMS today. Each one hides something on the website until it is filled.</p>
+  <ol class="steps">
+    <li><b>CUCET Phase II table</b> — add a row: phase <code>phase-2</code>, title and display title "CUCET Phase II".<span class="path">Page · Program Defaults → cucet_phase_titles</span></li>
+    <li><b>Fee section buttons</b> — Explore All Scholarships → <code>/admissions/scholarships</code>, Education loan → <code>/admissions/education-loan</code>, Apply through CUCET → CUCET link.<span class="path">Course Fees Page → scholarship_actions</span></li>
+    <li><b>Student Testimonials</b> — pick the students to show by default, and write each student's quote.<span class="path">Page · Program Defaults → testimonials · Data · Placed Student → quote</span></li>
+    <li><b>Announcement bar</b> — add the current message again as row 1 (the bar now takes a list).<span class="path">Site · Announcement Bar → messages</span></li>
+    <li><b>5th Year tab</b> — type "5th Year" for the five-year programmes.<span class="path">Page · Program Defaults → Labels → curriculum_year_5</span></li>
+  </ol>
+</section>
+
+<section id="programme">
+  <div class="kick">Data · Program</div>
+  <h2>Programme page and card</h2>
+  <div class="tw"><table>
+    <tr><th>Field</th><th>What it controls</th><th>If left empty</th></tr>
+    <tr><td class="f"><span class="chip c-new">NEW</span><b>why_tiles</b></td><td>The small boxes on the Why Choose cards, up to 4 (heading + value).</td><td class="e">Defaults show: Industry Partner (collaborations) and Programme Duration.</td></tr>
+    <tr><td class="f"><span class="chip c-new">NEW</span><b>use_default_why_tiles</b></td><td>On: defaults fill the boxes you did not write. Off: only your boxes.</td><td class="e">On by default. Off with no boxes written: no boxes.</td></tr>
+    <tr><td class="f"><span class="chip c-new">NEW</span><b>highlights</b></td><td>The 4 facts on the programme explorer card (home page, /programs, landing pages). Icon: spark, lab, partners or globe.</td><td class="e">The school's facts show (Data · School → highlights).</td></tr>
+    <tr><td class="f"><span class="chip c-new">NEW</span><b>testimonials</b></td><td>The students shown in Student Testimonials on this programme.</td><td class="e">Program Defaults' picks. Both empty: section hidden.</td></tr>
+    <tr><td class="f"><span class="chip c-new">NEW</span><b>Roles → image</b></td><td>The picture for that role in Career Opportunities.</td><td class="e">Career Role photo, then a Career photos pool photo, else no picture.</td></tr>
+    <tr><td class="f"><span class="chip c-chg">CHANGED</span><b>Roles → role_key</b></td><td>Links the role to its Data · Career Role (description and photo).</td><td class="e">Matched by the exact role name.</td></tr>
+    <tr><td class="f"><span class="chip c-chg">CHANGED</span><b>Why · Feature cards → image</b></td><td>The card's photo.</td><td class="e">The card still shows, with the Program Defaults card photo.</td></tr>
+    <tr><td class="f"><span class="chip c-chg">CHANGED</span><b>Events &amp; News</b><span class="path">tags on Campus Event / News Post → Programs</span></td><td>Items tagged with this programme show on its page, up to 4.</td><td class="e">Its school's items, then Program Defaults' picks, then the Home · Moments cards.</td></tr>
+  </table></div>
+</section>
+
+<section id="defaults">
+  <div class="kick">Page · Program Defaults</div>
+  <h2>Shared fallbacks</h2>
+  <div class="tw"><table>
+    <tr><th>Field</th><th>What it controls</th><th>If left empty</th></tr>
+    <tr><td class="f"><span class="chip c-new">NEW</span><b>testimonials</b></td><td>Default students for every programme and school page that picks none.</td><td class="e">Student Testimonials hidden on those pages.</td></tr>
+    <tr><td class="f"><span class="chip c-new">NEW</span><b>default_events</b> · <b>default_news</b></td><td>Default Events &amp; News rows (events first, up to 4) for pages with nothing tagged.</td><td class="e">The 4 Home · Moments cards.</td></tr>
+    <tr><td class="f"><span class="chip c-new">NEW</span><b>Labels → curriculum_year_5</b></td><td>Name of the 5th curriculum tab.</td><td class="e">No 5th Year tab.</td></tr>
+    <tr><td class="f"><b>cucet_phase_titles</b></td><td>One row per CUCET phase table on programme pages (phase-1, phase-2).</td><td class="e">A missing row hides that phase's table.</td></tr>
+  </table></div>
+</section>
+
+<section id="school">
+  <div class="kick">Data · School · Placed Student</div>
+  <h2>Schools and students</h2>
+  <div class="tw"><table>
+    <tr><th>Field</th><th>What it controls</th><th>If left empty</th></tr>
+    <tr><td class="f"><span class="chip c-new">NEW</span><b>School → testimonials</b></td><td>Students shown on the school page.</td><td class="e">Program Defaults' picks.</td></tr>
+    <tr><td class="f"><b>School → highlights</b></td><td>Explorer card facts for every programme in the school without its own.</td><td class="e">No facts panel on the card.</td></tr>
+    <tr><td class="f"><span class="chip c-chg">CHANGED</span><b>Events &amp; News</b><span class="path">tags on Campus Event / News Post → School</span></td><td>Items tagged with the school show on the school page and its programmes.</td><td class="e">Program Defaults' picks, then Home · Moments.</td></tr>
+    <tr><td class="f"><span class="chip c-chg">CHANGED</span><b>Placed Student → quote</b></td><td>The student's own words on their testimonial card. /about/testimonials lists every student.</td><td class="e">Card shows without a quote.</td></tr>
+  </table></div>
+</section>
+
+<section id="home">
+  <div class="kick">Home · Site · Course Fees</div>
+  <h2>Home page and site-wide</h2>
+  <div class="tw"><table>
+    <tr><th>Field</th><th>What it controls</th><th>If left empty</th></tr>
+    <tr><td class="f"><span class="chip c-chg">CHANGED</span><b>Announcement Bar → messages</b></td><td>Up to 10 messages (text, button label, link); arrows step through them. A link starting https:// opens a new tab.</td><td class="e">No label or link: no button. No messages: no bar.</td></tr>
+    <tr><td class="f"><span class="chip c-chg">CHANGED</span><b>Home · Placement → designation</b><span class="path">Success stories, Achievers</span></td><td>The line under the person's name. Now optional — the "NA" values have been cleared.</td><td class="e">No line under the name.</td></tr>
+    <tr><td class="f"><span class="chip c-chg">CHANGED</span><b>Home · Testimonials → achiever_videos → title</b></td><td>The caption under each achiever video. Now optional.</td><td class="e">No caption.</td></tr>
+    <tr><td class="f"><b>Course Fees Page → scholarship_actions</b></td><td>The three buttons in every programme's fee section.</td><td class="e">Buttons hidden.</td></tr>
+  </table></div>
+</section>
+
+<section id="auto">
+  <div class="kick">No field to fill</div>
+  <h2>Website fixes</h2>
+  <div class="tw"><table>
+    <tr><th>Fix</th><th>What changed on the website</th></tr>
+    <tr><td class="f"><span class="chip c-fix">FIX</span><b>Curriculum year tabs</b></td><td>Tabs follow the programme's semesters: a 2-year MBA shows 1st and 2nd Year, B.Tech shows 4.</td></tr>
+    <tr><td class="f"><span class="chip c-fix">FIX</span><b>Why cards without a photo</b></td><td>No longer disappear. This brings back Why cards on 13 programmes, including MCA AI ML.</td></tr>
+    <tr><td class="f"><span class="chip c-fix">FIX</span><b>CUCET phase cards</b><span class="path">landing pages</span></td><td>The red highlight follows the card the visitor clicks. Apply stays on the open phase (the last column).</td></tr>
+    <tr><td class="f"><span class="chip c-fix">FIX</span><b>Career Opportunities pictures</b></td><td>Roles now get pictures from Page · Career photos; no empty picture box.</td></tr>
+  </table></div>
+</section>
+
+<footer>CU Lucknow CMS · 43.204.193.67 · Changes go live with the next "Publish to website".</footer>
+</div>
+</body>
+</html>

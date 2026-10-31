@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>FAQ &amp; Testimonials Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap">
+<style>
+:root{--red:#D7101A;--ink:#111;--ink2:#1a1a1a;--grey:#f3f3f3;--line:#e6e6e6;--text:#222;--muted:#6b6b6b;--bg:#fff;--ok:#1a7f37}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 15px/1.55 Inter,system-ui,sans-serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+a{color:inherit}
+em.s{font-family:'Instrument Serif',Georgia,serif;font-style:italic;color:var(--red);font-weight:400}
+.kick{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+code{font:12px/1.4 ui-monospace,Menlo,monospace;background:var(--grey);padding:1px 5px;border-radius:4px;overflow-wrap:anywhere}
+pre.addr{font:13px/1.6 ui-monospace,Menlo,monospace;background:var(--ink);color:#fff;border-radius:10px;padding:12px 14px;margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+pre.addr .c{color:#9a9a9a}
+/* top bar */
+.bar{position:sticky;top:0;z-index:5;background:var(--ink);color:#fff}
+.bar .wrap{display:flex;gap:18px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap}
+.bar a{text-decoration:none;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.75}
+.bar a:hover{opacity:1}
+.bar b{font-size:13px;letter-spacing:.02em;margin-right:8px}
+.bar .cms{margin-left:auto;color:#fff;opacity:1;background:var(--red);padding:7px 12px;border-radius:999px}
+/* blocks */
+.card{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:24px 0}
+.pad{padding:32px}
+h1{font:500 clamp(30px,4.5vw,46px)/1.12 Inter,sans-serif;margin:10px 0 12px;letter-spacing:-.01em}
+h2{font:500 clamp(24px,3vw,32px)/1.2 Inter,sans-serif;margin:8px 0 6px}
+h3{font:600 16px/1.3 Inter,sans-serif;margin:0 0 8px}
+h3.gap{margin-top:28px}
+p{margin:0 0 10px}
+.muted{color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:6px 6px 6px 18px;text-decoration:none;font-size:14px;background:#fff}
+.pill i{width:28px;height:28px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-style:normal;font-size:14px}
+.gtop{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.gtop h1{margin-bottom:0}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.tile{background:var(--grey);padding:22px;min-height:140px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;text-decoration:none;color:inherit}
+.tile .n{font:400 34px/1 'Instrument Serif',Georgia,serif}
+.tile.dark{background:var(--ink2);color:#fff}.tile.dark .kick{color:#aaa}
+.tile.red{background:var(--red);color:#fff}.tile.red .kick{color:#ffd9db}
+.tile.white{background:#fff}
+a.tile:hover .n{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.sechead{background:var(--ink);color:#fff}
+.sechead .kick{color:#aaa}
+.sechead h2{margin:6px 0 4px}
+.sechead p{color:#cfcfcf;max-width:760px;margin:0}
+.body{padding:28px 32px 32px}
+/* tables */
+.tbl{border:1px solid var(--line);border-radius:10px;overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;text-align:left;padding:10px 12px;border-bottom:1px solid var(--ink);white-space:nowrap;background:#fff}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+tr.grp td{background:var(--grey);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+td.d{color:var(--muted);font-size:13px}
+.y{color:var(--ok);font-weight:600}.no{color:var(--red);font-weight:600}
+.req{color:var(--red);font-weight:600}
+.tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border:1px solid var(--line);border-radius:4px;padding:1px 5px;margin-left:6px;color:var(--muted);white-space:nowrap}
+.demo{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;background:#fff4d6;color:#7a5200;border:1px solid #f0d68a;border-radius:999px;padding:1px 8px;margin-left:6px;white-space:nowrap}
+.demo.blue{background:#eef4ff;color:#1d3f8f;border-color:#c7d7f5}
+/* diagrams */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:14px 0}
+.grid2>div{background:#fff;padding:24px}
+ol,ul{margin:0;padding-left:20px}
+li{margin:4px 0}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.flow span{background:var(--grey);border-radius:8px;padding:10px 14px;font-weight:500;font-size:14px}
+.flow span.k{background:var(--red);color:#fff}
+.flow span.d{background:var(--ink);color:#fff}
+.flow b{color:var(--muted);font-weight:400}
+.dia{display:grid;gap:10px;margin:14px 0}
+.box{border:1px solid var(--ink);border-radius:10px;padding:12px 14px;background:#fff}
+.box .kick{display:block;margin-bottom:4px}
+.box.red{border-color:var(--red)}
+.box.fill{background:var(--grey);border-color:var(--grey)}
+.box.dark{background:var(--ink2);border-color:var(--ink2);color:#fff}.box.dark .kick{color:#aaa}
+.arrow{text-align:center;color:var(--muted);font-size:13px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.row4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.do li::marker{content:'✓  ';color:var(--ok)}
+.dont li::marker{content:'✗  ';color:var(--red)}
+.note{border-left:3px solid var(--red);background:#fff6f6;padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0}
+.note.info{border-color:var(--ink);background:var(--grey)}
+.note.prop{border-color:#1d3f8f;background:#eef4ff}
+.steps{counter-reset:s;list-style:none;padding:0;margin:12px 0;display:grid;gap:8px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;margin:0}
+.steps li::before{content:counter(s);width:28px;height:28px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:600;font-size:13px}
+details{border-top:1px solid var(--line)}
+details:first-of-type{border-top:0}
+summary{cursor:pointer;padding:16px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';color:var(--red);font-size:20px;line-height:1}
+details[open] summary::after{content:'–'}
+details>div{padding:0 0 18px}
+/* mock card */
+.mock{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:start;margin:14px 0}
+.scard{background:var(--ink2);color:#fff;border-radius:14px;overflow:hidden;font-size:13px}
+.scard .ph{height:150px;background:linear-gradient(160deg,#3a3a3a,#222);position:relative;display:grid;place-items:center;color:#777;font-size:12px}
+.scard .lg{position:absolute;right:8px;top:8px;background:#fff;color:#111;border-radius:6px;padding:3px 7px;font-size:10px;font-weight:600}
+.scard .tx{padding:12px 14px}
+.scard .q{color:#cfcfcf;font-style:italic;margin-bottom:10px}
+.scard .nm{font-weight:600}.scard .at{color:#aaa}
+.callout{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font-size:11px;font-weight:600;margin-right:6px;flex:none}
+/* tester */
+.tester{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.tester label{display:block;font-size:12px;font-weight:600;margin-bottom:4px}
+.tester input,.tester textarea{width:100%;font:13px/1.5 ui-monospace,Menlo,monospace;padding:10px 12px;border:1px solid var(--ink);border-radius:10px;outline:0;background:#fff;color:var(--text)}
+.tester textarea{min-height:110px;resize:vertical}
+.tester input:focus,.tester textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px #d7101a22}
+#tOut{border-radius:10px;padding:12px 14px;background:var(--grey);font-size:14px}
+#tOut ul{margin-top:6px}
+footer{padding:24px 0 56px;color:var(--muted);font-size:12px}
+@media(max-width:860px){.tiles,.row4{grid-template-columns:1fr 1fr}.grid2,.row2,.row3,.tester,.mock{grid-template-columns:1fr}.pad,.body,.grid2>div{padding:20px}.mock .scard{max-width:240px}}
+@media(max-width:520px){.tiles,.row4{grid-template-columns:1fr}.tile .n{font-size:28px}}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="wrap">
+  <b>CU CMS Guide</b>
+  <a href="../">All guides</a>
+  <a href="#faq">FAQ</a>
+  <a href="#scope">Scope a FAQ</a>
+  <a href="#tester">Address tester</a>
+  <a href="#testimonials">Student testimonials</a>
+  <a href="#empty">If left empty</a>
+  <a class="cms" href="http://43.204.193.67/admin" target="_blank" rel="noopener">Open CMS ↗</a>
+</div></div>
+
+<div class="wrap">
+
+<!-- HERO -->
+<div class="card">
+  <div class="pad gtop">
+    <div>
+      <div class="kick">CU Uttar Pradesh · CMS · Focused guide</div>
+      <h1>FAQ &amp; Student <em class="s">Testimonials</em></h1>
+      <p class="muted" style="max-width:640px;margin-top:10px">Where each one comes from, how to give one programme its own FAQ, how two programmes share one, how the testimonial cards are built, and what the site does when a field is left empty.</p>
+    </div>
+    <a class="pill" href="http://43.204.193.67/admin" target="_blank" rel="noopener">Open the CMS <i>↗</i></a>
+  </div>
+  <div class="tiles">
+    <a class="tile white" href="#faq"><span class="n">Home · FAQ</span><span class="kick">One list · every FAQ on the site</span></a>
+    <a class="tile red" href="#scope"><span class="n">pages box</span><span class="kick">Limits a question to some addresses</span></a>
+    <a class="tile dark" href="#testimonials"><span class="n">Testimonials</span><span class="kick">Home · Placement + School Hub</span></a>
+    <a class="tile" href="#empty"><span class="n">If left empty</span><span class="kick">Fallbacks · what breaks · what hides</span></a>
+  </div>
+</div>
+
+<!-- ============ FAQ ============ -->
+<div class="card" id="faq">
+  <div class="pad sechead">
+    <div class="kick">Part 1</div>
+    <h2>The FAQ section</h2>
+    <p>Every question on the site lives in <b>one</b> place: <b>Content Manager → Home · FAQ</b>. There is no separate FAQ on each programme. Each question decides for itself where it shows, with its <code style="background:#333;color:#fff">pages</code> box.</p>
+  </div>
+  <div class="body">
+
+    <h3>One question = one row in Home · FAQ → entries</h3>
+    <div class="tbl"><table>
+      <tr><th>Field</th><th>What to type</th><th>What it does on the site</th></tr>
+      <tr><td><b>group</b> <span class="req">*</span></td><td>The tab name, e.g. <code>admissions</code>, <code>Fees</code>, <code>campus-life</code></td><td class="d">The tab the question sits under. Tabs appear in the order they first appear in the list. A lowercase name like <code>campus-life</code> shows as “Campus Life”; anything with a capital letter shows exactly as typed.</td></tr>
+      <tr><td><b>question</b> <span class="req">*</span></td><td>The question</td><td class="d">The accordion row title.</td></tr>
+      <tr><td><b>answer</b> <span class="req">*</span></td><td>Plain text</td><td class="d">Shown when the row is opened.</td></tr>
+      <tr><td><b>pages</b></td><td>Addresses, one per line. Empty = general.</td><td class="d"><b>The scoping field.</b> Empty → a <i>general</i> question (home page and every page with no questions of its own). Filled → the question shows <i>only</i> on those addresses. See <a href="#scope">Scope a FAQ</a>.</td></tr>
+      <tr><td><b>scope</b> <span class="req">*</span></td><td><code>landing</code> · <code>admissions</code> · <code>both</code></td><td class="d">Only for <b>general</b> questions, and only on two pages: <code>landing</code> = home page only, <code>admissions</code> = /admissions/faqs only, <code>both</code> = both. Programme pages and school hubs ignore it.</td></tr>
+      <tr><td><b>cta_label / cta_link</b></td><td>Optional</td><td class="d">Saved, but <b>not shown</b> on the site today. Leave empty.</td></tr>
+    </table></div>
+
+    <h3 class="gap">Where the FAQ appears, and what it reads</h3>
+    <div class="tbl"><table>
+      <tr><th>Page</th><th>Questions it shows</th><th>Heading comes from</th></tr>
+      <tr class="grp"><td colspan="3">Reads Home · FAQ</td></tr>
+      <tr><td>Home <code>/</code></td><td>General questions with scope <code>landing</code> or <code>both</code></td><td class="d">Home · FAQ → heading</td></tr>
+      <tr><td><code>/admissions/faqs</code></td><td>General questions with scope <code>admissions</code> or <code>both</code>, by tab</td><td class="d">Page · Program Defaults → faq_heading</td></tr>
+      <tr><td>Every programme <code>/programs/&lt;school&gt;/&lt;programme&gt;</code></td><td rowspan="4">The <b>page rule</b> below: its own questions if it has any, otherwise all general questions</td><td class="d" rowspan="4">Page · Program Defaults → faq_heading</td></tr>
+      <tr><td>Every school hub <code>/programs/&lt;school&gt;</code></td></tr>
+      <tr><td><code>/admissions</code> (opens on the Admissions tab)</td></tr>
+      <tr><td><code>/about/industry-collaboration</code> (opens on Academics)</td></tr>
+      <tr class="grp"><td colspan="3">Has its own FAQ (Home · FAQ is not used there)</td></tr>
+      <tr><td><code>/placements</code></td><td>Page · Placements → its FAQ list</td><td class="d">Same entry</td></tr>
+      <tr><td><code>/admissions/education-loan</code></td><td>Page · Education Loan → EMI FAQ (tabs by its <code>tab</code> field)</td><td class="d">Same entry</td></tr>
+      <tr><td>Admission pathway pages</td><td>Data · Admission Pathway → faqs on each pathway</td><td class="d">Same entry</td></tr>
+    </table></div>
+
+    <h3 class="gap">The page rule: own questions <em>replace</em> the general ones</h3>
+    <div class="dia">
+      <div class="box dark"><span class="kick">A visitor opens</span><code style="background:#333;color:#fff">/programs/business/mba</code></div>
+      <div class="arrow">↓ the site checks every question's pages box ↓</div>
+      <div class="box"><span class="kick">Question</span>Does <b>any</b> question list this address (exactly, or through a <code>/*</code> wildcard)?</div>
+      <div class="row2">
+        <div class="box red"><span class="kick">Yes, at least one</span>Show <b>only</b> the questions that list this address. The general questions are <b>not</b> shown on this page.</div>
+        <div class="box fill"><span class="kick">No, none</span>Show <b>every general question</b> (pages box empty), whatever their scope.</div>
+      </div>
+      <div class="arrow">↓ then ↓</div>
+      <div class="box"><span class="kick">Tabs</span>Only tabs that still have a question for this page are drawn. If nothing is left at all, the FAQ section is not shown.</div>
+    </div>
+    <div class="note"><b>Important:</b> the moment programme ABC gets one question of its own, it stops showing the general set. If ABC should still show some general questions (fees, hostel…), those must be listed for ABC too. See scenario C below.</div>
+  </div>
+</div>
+
+<!-- ============ SCOPING ============ -->
+<div class="card" id="scope">
+  <div class="pad sechead">
+    <div class="kick">Part 1 · How to</div>
+    <h2>Scope a FAQ to one programme, or share it</h2>
+    <p>Examples use real addresses. “ABC” = MBA <code style="background:#333;color:#fff">/programs/business/mba</code>, “XYZ” = MBA Strategic HR <code style="background:#333;color:#fff">/programs/business/mba-strategic-hr</code>.</p>
+  </div>
+  <div class="body">
+
+    <h3>First, get the page's address</h3>
+    <p>Open the programme on the website and copy everything after the domain. For <code>https://…/programs/business/mba</code> type <code>/programs/business/mba</code>. A missing leading slash is added and a trailing slash is removed for you; anything else must match exactly.</p>
+
+    <details open>
+      <summary>A · A FAQ only programme ABC shows</summary>
+      <div>
+        <ol class="steps">
+          <li><span>Content Manager → <b>Home · FAQ</b> → scroll to <b>entries</b> → <b>Add an entry</b>.</span></li>
+          <li><span><b>group</b>: the tab, e.g. <code>Admissions</code>. <b>question</b> / <b>answer</b>: the text. <b>scope</b>: leave <code>both</code> (it is ignored for limited questions).</span></li>
+          <li><span><b>pages</b>:</span></li>
+        </ol>
+        <pre class="addr">/programs/business/mba</pre>
+        <ol class="steps" start="4" style="counter-reset:s 3">
+          <li><span>Repeat for each MBA-only question. <b>Save</b> → <b>Publish</b> → <b>Publish to website</b>.</span></li>
+        </ol>
+        <p><b>Result:</b> the MBA page shows only these questions, grouped by their tabs. The home page, every other programme and every school hub are unchanged.</p>
+      </div>
+    </details>
+
+    <details open>
+      <summary>B · Programmes ABC and XYZ share the same FAQ</summary>
+      <div>
+        <p>Do <b>not</b> copy the question twice. Make it once and put <b>both addresses</b> in its pages box, one per line:</p>
+        <pre class="addr">/programs/business/mba
+/programs/business/mba-strategic-hr</pre>
+        <p>Edit the answer once and both pages change together. A question can list as many addresses as needed. A comma also works as a separator.</p>
+        <p><b>Mixing shared and own questions</b>, for example:</p>
+        <div class="tbl"><table>
+          <tr><th>Question</th><th>pages box</th><th>ABC (mba)</th><th>XYZ (mba-strategic-hr)</th><th>Home</th></tr>
+          <tr><td>Q1 · Is CAT required?</td><td><code>/programs/business/mba</code><br><code>/programs/business/mba-strategic-hr</code></td><td class="y">shows</td><td class="y">shows</td><td class="no">no</td></tr>
+          <tr><td>Q2 · Is there a PwC certificate?</td><td><code>/programs/business/mba</code></td><td class="y">shows</td><td class="no">no</td><td class="no">no</td></tr>
+          <tr><td>Q3 · Which HR tools are taught?</td><td><code>/programs/business/mba-strategic-hr</code></td><td class="no">no</td><td class="y">shows</td><td class="no">no</td></tr>
+          <tr><td>Q4 · Is there a hostel? <span class="tag">general</span></td><td><i class="muted">empty</i></td><td class="no">no*</td><td class="no">no*</td><td class="y">shows</td></tr>
+        </table></div>
+        <p class="muted" style="font-size:13px">* ABC and XYZ have their own questions, so the general set no longer shows there. Every other programme, with no own questions, still shows Q4.</p>
+      </div>
+    </details>
+
+    <details open>
+      <summary><span>C · ABC needs its own questions <i>and</i> a general one</span></summary>
+      <div>
+        <p>A question is either general (empty box) <b>or</b> limited (filled box), never both. Putting ABC's address in the hostel question would take it off the home page. So:</p>
+        <ul class="do">
+          <li>Make a second copy of the general question with the pages box filled for ABC (and XYZ, if they share). The original stays empty, for the home page and everyone else.</li>
+        </ul>
+        <div class="note prop"><b>Option, not built:</b> the rule could be changed to “own questions <i>plus</i> the general set” so no copies are ever needed. That is a small site change; it also means every programme with its own questions grows longer. Decide before we change it.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>D · One FAQ for a whole school, or for every programme</summary>
+      <div>
+        <p>End an address with <code>/*</code> to cover everything under it.</p>
+        <div class="tbl"><table>
+          <tr><th>Typed in pages</th><th>Covers</th><th>Does not cover</th></tr>
+          <tr><td><code>/programs/business/mba</code></td><td>That one programme page</td><td class="d">Anything else</td></tr>
+          <tr><td><code>/programs/business</code></td><td>The Business school hub page only</td><td class="d">The programmes under it</td></tr>
+          <tr><td><code>/programs/business/*</code></td><td>Every Business programme page</td><td class="d">The Business hub itself (add <code>/programs/business</code> as a second line if wanted)</td></tr>
+          <tr><td><code>/programs/*</code></td><td>Every programme page <b>and</b> every school hub</td><td class="d"><code>/programs</code> itself, home, admissions</td></tr>
+        </table></div>
+        <div class="note">A wildcard counts as “own questions”. Put <code>/programs/business/*</code> on one question and <b>all</b> Business programmes stop showing the general set. Use it on purpose.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>E · Tabs: naming and order</summary>
+      <div>
+        <ul>
+          <li>The tab is whatever is typed in <b>group</b>. Tabs run in the order each name first appears in the entries list. Drag rows to reorder.</li>
+          <li>Type the same name the same way every time. <code>admissions</code> and <code>Admissions</code> are <b>two different tabs</b> that both read “Admissions”.</li>
+          <li>On a scoped page, only the tabs that hold one of its questions show. One tab = still drawn as a single tab.</li>
+          <li>Tabs in use today: <code>general</code>, <code>admissions</code>, <code>academics</code>, <code>campus-life</code>, <code>International Students</code>, <code>Health and Safety</code>. Reuse these where they fit.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<!-- ============ TESTER ============ -->
+<div class="card pad" id="tester">
+  <h2>Address <em class="s">tester</em></h2>
+  <p class="muted">Paste a question's pages box on the right and a page address on the left to see if the question will show there. It uses the same matching the site uses. Nothing is saved.</p>
+  <div class="tester">
+    <div><label for="tPath">Page address</label><input id="tPath" value="/programs/business/mba" autocomplete="off" spellcheck="false"></div>
+    <div><label for="tPages">pages box of the question</label><textarea id="tPages" spellcheck="false">/programs/business/mba
+/programs/business/mba-strategic-hr</textarea></div>
+  </div>
+  <div id="tOut" aria-live="polite"></div>
+</div>
+
+<!-- ============ TESTIMONIALS ============ -->
+<div class="card" id="testimonials">
+  <div class="pad sechead">
+    <div class="kick">Part 2</div>
+    <h2>The Student Testimonials section</h2>
+    <p>The black “In their words · Student <i>Testimonials</i>” track of person cards. It looks the same everywhere, but it has two data sources: the <b>university list</b> (programmes, school hubs, /about/testimonials) and the <b>landing page's own list</b> (/lp pages).</p>
+  </div>
+  <div class="body">
+
+    <h3>Where it appears</h3>
+    <div class="tbl"><table>
+      <tr><th>Page</th><th>Cards come from</th><th>Heading · eyebrow · line under it</th></tr>
+      <tr><td>All 71 programme pages <span class="tag">#testimonial</span></td><td><b>University list</b>. The same cards on every programme.</td><td class="d">Page · Program Defaults → testimonials_heading (title, eyebrow, body)</td></tr>
+      <tr><td>All 13 school hubs <code>/programs/&lt;school&gt;</code></td><td><b>University list</b></td><td class="d">Data · School Hub → testimonials_heading, success_stories_eyebrow, success_stories_subline</td></tr>
+      <tr><td><code>/about/testimonials</code></td><td><b>University list</b>, laid out as a grid (all cards on screen)</td><td class="d">Page · About → testimonials_eyebrow, testimonials_subline</td></tr>
+      <tr><td>Landing pages <code>/lp/…</code></td><td><b>That page's own students</b>, typed on the page</td><td class="d">The section's own title/eyebrow/lede, else Page · LP Defaults → Testimonials</td></tr>
+    </table></div>
+
+    <div class="note info"><b>Not the same thing:</b>
+      <ul style="margin-top:6px">
+        <li><b>Placed students</b> on a programme page (cards with company logos, “Placements” anchor) = <b>Data · Placed Student</b>, picked on each programme. Per programme; hidden where none are picked.</li>
+        <li><b>Home · Testimonials</b> = the dignitary video reels, the achiever video strip, Instagram reels and the Message-tab quotes. Different section, different entry.</li>
+      </ul>
+    </div>
+
+    <h3 class="gap">How one card is built (university list)</h3>
+    <div class="mock">
+      <div class="scard">
+        <div class="ph">photo<span class="lg">logo</span></div>
+        <div class="tx">
+          <div class="q">“The projects and mentoring here prepared me…”</div>
+          <div class="nm">Vandana Chauhan</div>
+          <div class="at">Company · 12 LPA</div>
+        </div>
+      </div>
+      <div>
+        <p><span class="callout">1</span><b>Photo, name, company, logo</b>: from <b>Home · Placement</b>. First the <b>achievers</b>, then the <b>success stories</b>.</p>
+        <p><span class="callout">2</span><b>Line under the name</b>: achievers = <code>placed_in · salary_value salary_unit</code>. Success stories = the company image's <b>alternative text</b> (e.g. “ResMed”); if that is empty, the <b>designation</b>.</p>
+        <p><span class="callout">3</span><b>Logo plate</b>: achievers only (<code>company_logo</code>). Success-story cards have none.</p>
+        <p><span class="callout">4</span><b>Quote</b>: from <b>Data · School Hub → success_story_quotes</b>, handed out in turn: card 1 gets quote 1, card 2 quote 2… card 6 gets quote 1 again.</p>
+      </div>
+    </div>
+
+    <div class="dia">
+      <div class="row3">
+        <div class="box red"><span class="kick">Home · Placement → achievers</span>3 today: Vandana Chauhan, Harsh, Shanaya Trehan<br><small class="muted">name · designation · placed_in · salary · photo · logo, all required</small></div>
+        <div class="box"><span class="kick">Home · Placement → success_stories</span>13 today, all stream <code>engineering</code><br><small class="muted">Only the <b>first stream that has rows</b> is used</small></div>
+        <div class="box fill"><span class="kick">Data · School Hub → success_story_quotes</span>5 placeholder sentences, cycled across the 16 cards</div>
+      </div>
+      <div class="arrow">↓ folded into one list, achievers first ↓</div>
+      <div class="box dark"><span class="kick">Student Testimonials track</span>16 cards. Short lists repeat until the loop has 10, so the marquee never stops.</div>
+    </div>
+
+    <div class="note"><b>The quotes are placeholders.</b> They are not tied to the person on the card: a real graduate is shown with a sentence they never said. Replace them before launch, or add a quote per person (below). Page · Program Defaults also has a <code>placeholder_quotes</code> list, but the site does not read it; only School Hub's list is used.</div>
+
+    <h3 class="gap">How to fill the university list</h3>
+    <ol class="steps">
+      <li><span><b>Content Manager → Home · Placement → achievers</b>: name, designation, placed_in (company), salary_value (<code>12</code>), salary_unit (<code>LPA</code>), company_logo, person_image (a cut-out portrait, transparent background).</span></li>
+      <li><span><b>Home · Placement → success_stories</b>: stream, name, designation, company_image (<b>fill its alternative text with the company name</b> in the Media Library), person_image.</span></li>
+      <li><span><b>Data · School Hub → success_story_quotes</b>: one sentence per row.</span></li>
+      <li><span>Headings: Page · Program Defaults → testimonials_heading for programme pages, Data · School Hub for hubs, Page · About for /about/testimonials. Wrap the red italic words in <code>*asterisks*</code>.</span></li>
+      <li><span><b>Save → Publish → Publish to website.</b> One edit updates every programme, hub and /about/testimonials together.</span></li>
+    </ol>
+
+    <h3 class="gap">How to fill a landing page's own list</h3>
+    <ol class="steps">
+      <li><span>Content Manager → <b>Landing Page</b> → the page → <b>sections</b> → add <b>testimonials</b> (or open the existing one).</span></li>
+      <li><span><b>students</b>, one row each: name <span class="req">*</span>, company <span class="req">*</span>, at (replaces the company on the card), quote (their own words; empty = no quote), photo <span class="req">*</span>, logo <span class="req">*</span>.</span></li>
+      <li><span>Leave title, anchor empty to take them from <b>Page · LP Defaults → Testimonials</b>. Anything typed on the page wins.</span></li>
+      <li><span><b>hide</b> on = section left off the page; its rows stay saved.</span></li>
+    </ol>
+
+    <h3 class="gap">Can programme ABC have its own testimonials?</h3>
+    <p><b>Not today.</b> Every programme shows the same university list. What is per programme now is <b>Placed students</b> (Data · Placed Student, picked on the programme), a separate section.</p>
+    <div class="note prop"><b>Options, not built, need a go:</b>
+      <ul style="margin-top:6px">
+        <li><b>Pick on the programme</b>: a “testimonials” picker on Data · Program, like placed students. Empty = the university list, as now. Clear for editors; one place per programme.</li>
+        <li><b>A pages box on each story</b>, like the FAQ: <code>/programs/business/*</code> on a Business graduate. Shares across many programmes in one row.</li>
+        <li>Either way, add a <b>quote</b> field on each person so the words belong to the person who said them, and retire the cycled placeholders.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ EMPTY ============ -->
+<div class="card" id="empty">
+  <div class="pad sechead">
+    <div class="kick">What if they don't fill it</div>
+    <h2>Fallbacks, failures and hidden sections</h2>
+    <p>Three outcomes: the site <b>falls back</b> to something else, the <b>section hides</b>, or <b>Publish to website stops</b> and the live site stays exactly as it was until the field is fixed.</p>
+  </div>
+  <div class="body">
+    <div class="flow"><span>Save</span><b>→</b><span>Publish</span><b>→</b><span class="k">Publish to website</span><b>→</b><span class="d">Live</span></div>
+    <p class="muted" style="font-size:13px">A saved draft never reaches the site. A row missing a required field stops “Publish to website” with “a required field is incomplete — dropped row N”; nothing is changed on the live site.</p>
+
+    <h3 class="gap">FAQ</h3>
+    <div class="tbl"><table>
+      <tr><th>Left empty / wrong</th><th>What happens</th></tr>
+      <tr><td>group, question, answer</td><td>The CMS will not save the row.</td></tr>
+      <tr><td>pages</td><td><span class="demo blue">fallback</span> The question is general: home page (by scope) and every page with no own questions.</td></tr>
+      <tr><td>Programme ABC has no own questions</td><td><span class="demo blue">fallback</span> ABC shows the full general set.</td></tr>
+      <tr><td>Address typed wrong (<code>/program/business/mba</code>, <code>/programs/Business/mba</code>)</td><td><span class="demo">silent</span> The question matches nothing and shows <b>nowhere</b>, not even on the home page. Use the <a href="#tester">tester</a>.</td></tr>
+      <tr><td>Programme slug changed later</td><td><span class="demo">silent</span> Its limited questions stop showing; the page falls back to the general set. Update the pages box.</td></tr>
+      <tr><td>Every question removed for a page</td><td><span class="demo">hidden</span> The FAQ section is not shown on that page.</td></tr>
+      <tr><td>cta_label / cta_link</td><td>Nothing; they are not shown today.</td></tr>
+      <tr><td>Home · FAQ with no entries</td><td><span class="demo">stops</span> At least one entry is required; Publish to website stops.</td></tr>
+    </table></div>
+
+    <h3 class="gap">Student Testimonials</h3>
+    <div class="tbl"><table>
+      <tr><th>Left empty / wrong</th><th>What happens</th></tr>
+      <tr><td>Achiever or success story missing name, photo, company…</td><td><span class="demo">stops</span> Publish to website stops; live site unchanged.</td></tr>
+      <tr><td>All achievers or all success stories deleted</td><td><span class="demo">stops</span> Each list needs at least one row.</td></tr>
+      <tr><td>Company image's alternative text empty</td><td><span class="demo blue">fallback</span> The card shows the designation instead of the company.</td></tr>
+      <tr><td>Success stories added under Marketing, Pharma…</td><td><span class="demo">silent</span> Not used here while Engineering has rows; only the first stream with rows feeds the track. They do show on the home placement dashboard tabs.</td></tr>
+      <tr><td>School Hub quotes empty</td><td><span class="demo blue">fallback</span> Cards show with no quote.</td></tr>
+      <tr><td>Program Defaults → testimonials_heading block removed</td><td><span class="demo blue">fallback</span> Programme pages use Data · School Hub's heading and line; no eyebrow.</td></tr>
+      <tr><td>Program Defaults → testimonials_heading title empty (block kept)</td><td><span class="demo">stops</span> Title is required inside the block; Publish to website stops.</td></tr>
+      <tr><td>Program Defaults → testimonials_heading eyebrow / body empty</td><td><span class="demo">hidden</span> That line is simply not shown.</td></tr>
+      <tr><td>Landing page: student missing name, company, photo or logo</td><td>The CMS will not save it (all required, at least one student).</td></tr>
+      <tr><td>Landing page: title / anchor empty</td><td><span class="demo blue">fallback</span> Page · LP Defaults → Testimonials.</td></tr>
+      <tr><td>Landing page: quote or “at” empty</td><td><span class="demo blue">fallback</span> No quote; the company name is shown.</td></tr>
+      <tr><td>Landing page: hide on</td><td><span class="demo">hidden</span> Section left off; content kept.</td></tr>
+    </table></div>
+
+    <div class="grid2">
+      <div><h3>Do</h3><ul class="do">
+        <li>Copy page addresses from the browser.</li>
+        <li>One shared question with several addresses, not copies.</li>
+        <li>Fill the company image's alternative text.</li>
+        <li>Use cut-out portraits on a transparent background.</li>
+        <li>Click <b>Publish to website</b> after publishing in the CMS.</li>
+      </ul></div>
+      <div><h3>Don't</h3><ul class="dont">
+        <li>Add a wildcard (<code>/programs/*</code>) without meaning it: it removes the general set from every page it covers.</li>
+        <li>Spell a tab two ways (<code>fees</code> / <code>Fees</code>).</li>
+        <li>Fill cta fields expecting a button.</li>
+        <li>Leave the placeholder quotes on real people at launch.</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<footer>CU Uttar Pradesh · CMS guide · FAQ &amp; Student Testimonials · checked against the site code and CMS on 22 Oct 2026</footer>
+</div>
+
+<script>
+(function(){
+  var p=document.getElementById('tPath'),t=document.getElementById('tPages'),o=document.getElementById('tOut');
+  function norm(s){s=s.trim();if(!s)return '';if(s.charAt(0)!=='/')s='/'+s;if(s.length>1&&s.slice(-1)==='/')s=s.slice(0,-1);return s;}
+  function covers(page,path){return page.slice(-2)==='/*'?path.indexOf(page.slice(0,-1))===0:page===path;}
+  function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function run(){
+    var raw=p.value.trim().replace(/^https?:\/\/[^\/]+/i,'').replace(/[?#].*$/,'');
+    var path=norm(raw);
+    var lines=t.value.split(/[\n,]/).map(norm).filter(Boolean);
+    if(!path){o.innerHTML='Type a page address.';return;}
+    if(!lines.length){o.innerHTML='<b>Empty pages box</b> → a <b>general</b> question. Shows on the home page (by scope) and on <code>'+esc(path)+'</code> only if that page has no questions of its own.';return;}
+    var hits=lines.filter(function(l){return covers(l,path);});
+    var html=hits.length?'<span class="y">✓ Shows</span> on <code>'+esc(path)+'</code>. Matched by: <code>'+hits.map(esc).join('</code>, <code>')+'</code>. The general set will not show on this page.'
+      :'<span class="no">✗ Does not show</span> on <code>'+esc(path)+'</code>. It is also off the home page, because its pages box is filled.';
+    var bad=lines.filter(function(l){return /[A-Z\s]/.test(l)||/^\/program\//.test(l);});
+    if(bad.length)html+='<ul><li>Check: <code>'+bad.map(esc).join('</code>, <code>')+'</code>, addresses are lowercase, no spaces, and start with <code>/programs/</code>.</li></ul>';
+    o.innerHTML=html;
+  }
+  p.addEventListener('input',run);t.addEventListener('input',run);run();
+})();
+</script>
+</body>
+</html>

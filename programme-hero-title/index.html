@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CMS Guide · Programme Hero Title</title>
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--red:#D7101A;--ink:#111;--ink2:#161616;--grey:#f3f3f3;--text:#222;--muted:#6b6b6b;--line:#e6e6e6;--bg:#fff;
+  --c-logo:#7c3aed;--c-title:#0369a1;--c-name:#047857;--c-partner:#b45309;--c-label:#be123c;--c-code:#475569}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 15px/1.55 Inter,system-ui,sans-serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+.kick{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+.bar{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff}
+.bar .wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.bar a{color:#fff;text-decoration:none;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.8}
+.bar a:hover{opacity:1;text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:6px}
+.bar nav{display:flex;gap:16px;overflow-x:auto;white-space:nowrap;flex:1}
+.hero{padding:40px 0 20px}
+h1{font:600 clamp(28px,4vw,40px)/1.15 Inter,system-ui,sans-serif;margin:12px 0 14px;max-width:900px}
+.lede{max-width:720px;color:var(--muted);font-size:17px;margin:0}
+section{padding:48px 0 8px}
+h2{font:600 clamp(22px,3vw,28px)/1.2 Inter,system-ui,sans-serif;margin:8px 0 14px}
+.sub{color:var(--muted);max-width:760px;margin:0 0 24px}
+
+/* mock hero */
+.mock{background:linear-gradient(180deg,#3a2522,#121010);color:#fff;padding:40px 32px 36px;position:relative}
+.mock .logo{display:inline-block;font:700 34px/1 Inter,sans-serif;letter-spacing:-.02em;padding:4px 10px;outline:2px dashed var(--c-logo);outline-offset:4px;margin-bottom:18px}
+.mock .ttl{font:300 clamp(26px,4.4vw,52px)/1.1 Inter,sans-serif;letter-spacing:-.01em;margin:0}
+.mock .ttl i{font:italic 400 1em/1 'Playfair Display',Georgia,serif}
+.mock .subl{font-size:clamp(15px,2vw,24px);margin-top:14px}
+.seg{border-bottom:3px solid;padding-bottom:2px;position:relative}
+.seg sup{font:600 10px/1 Inter,sans-serif;font-style:normal;letter-spacing:.04em;background:#fff;color:#111;padding:2px 5px;margin-left:4px;vertical-align:super;border-radius:2px}
+.s-title{border-color:var(--c-title)}.s-name{border-color:var(--c-name)}.s-label{border-color:var(--c-label)}.s-partner{border-color:var(--c-partner)}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1px}
+.legend div{background:var(--grey);padding:16px 18px}
+.legend b{display:block;font-size:13px;margin-bottom:4px}
+.legend .sw{display:inline-block;width:12px;height:12px;margin-right:8px;vertical-align:-1px}
+
+/* field table */
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;background:#fafafa;position:sticky;top:44px}
+.tw{overflow-x:auto;border:1px solid var(--line)}
+.chip{display:inline-block;padding:1px 8px;font-size:12px;font-weight:600;color:#fff;white-space:nowrap}
+.c-logo{background:var(--c-logo)}.c-title{background:var(--c-title)}.c-name{background:var(--c-name)}.c-partner{background:var(--c-partner)}.c-label{background:var(--c-label)}.c-code{background:var(--c-code)}
+.path{color:var(--muted);font-size:12px}
+
+/* steps */
+.steps{counter-reset:s;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.steps li{list-style:none;background:#fff;padding:18px 20px 18px 64px;position:relative;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:20px;top:16px;width:28px;height:28px;background:var(--ink);color:#fff;font-weight:600;display:grid;place-items:center;font-size:13px}
+.steps .ex{margin-top:6px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:var(--grey);padding:8px 10px;overflow-x:auto;white-space:pre}
+.strike{text-decoration:line-through;color:#999}
+mark{background:#fff3c4;padding:0 2px}
+
+/* recipes */
+.rec{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.rec div{background:var(--grey);padding:20px}
+.rec h3{margin:0 0 6px;font-size:15px}
+.rec p{margin:0;font-size:13.5px}
+
+/* notes */
+.note{border-left:4px solid var(--red);background:#fff5f5;padding:16px 20px;margin:0 0 12px}
+.note b{display:block;margin-bottom:4px}
+
+/* all-programmes table */
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px;align-items:center}
+.tools input{font:inherit;font-size:14px;padding:8px 10px;border:1px solid #ccc;min-width:260px;flex:1;max-width:420px}
+.tools button{font:inherit;font-size:12px;font-weight:600;padding:8px 12px;border:1px solid #ccc;background:#fff;cursor:pointer}
+.tools button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+#all td.out{background:#1a1514;color:#fff;min-width:280px}
+#all .ht{font-weight:300;font-size:16px;line-height:1.3}
+#all .ht i{font-family:'Playfair Display',Georgia,serif}
+#all .subl{font-size:12px;opacity:.75;margin-top:4px}
+.f{padding:0 2px;border-bottom:2px solid}
+.f.t{border-color:var(--c-title)}.f.n{border-color:var(--c-name)}.f.p{border-color:var(--c-partner)}
+.tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 7px;margin:0 4px 4px 0;white-space:nowrap}
+.tag.rep{background:#fde2e2;color:#9b1c1c}.tag.one{background:#e8eefc;color:#1e3a8a}.tag.nop{background:#fef3c7;color:#92400e}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:20px}
+.stats div{background:var(--grey);padding:18px}
+.stats .num{font:600 30px/1 Inter,sans-serif;margin-bottom:6px}
+footer{padding:48px 0 64px;color:var(--muted);font-size:13px}
+@media (max-width:720px){.stats{grid-template-columns:1fr 1fr}.mock{padding:28px 18px}th{position:static}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap">
+  <span class="kick" style="color:#fff">CMS Guide</span>
+  <nav><a href="../">All guides</a><a href="#anatomy">Anatomy</a><a href="#fields">Fields</a><a href="#rules">How it's built</a><a href="#change">How to change</a><a href="#notes">Notes</a><a href="#all">All programmes</a></nav>
+</div></div>
+
+<div class="wrap">
+<header class="hero">
+  <div class="kick">Programme page · hero</div>
+  <h1>Where the programme heading comes from</h1>
+  <p class="lede">The big heading at the top of every programme page isn't one field. The site builds it from <b>four CMS fields</b>, three on the programme and one in Program Defaults, plus a logo. This page shows which field makes which word.</p>
+</header>
+
+<section id="anatomy" style="padding-top:12px">
+  <div class="kick">Anatomy</div>
+  <h2>M.Tech (CSE -AI &amp; ML) with SAS · LCS301</h2>
+  <p class="sub">This is the live hero, with each piece underlined in the colour of the field it comes from.</p>
+  <div class="mock">
+    <div class="logo">sas</div>
+    <p class="ttl"><span class="seg s-title">M.Tech<sup>TITLE</sup></span> <span class="seg s-name">Computer Science and Engineering<sup>PROGRAM NAME</sup></span> – <i><span class="seg s-title">AI &amp; ML<sup>TITLE</sup></span> <span class="seg s-label">in collaboration<sup>LABEL</sup></span></i></p>
+    <div class="subl"><span class="seg s-label">In collaboration with<sup>LABEL</sup></span> <span class="seg s-partner">SAS<sup>PARTNER</sup></span></div>
+  </div>
+  <div class="legend">
+    <div><span class="sw" style="background:var(--c-logo)"></span><b>Logo</b>Programme → Logo</div>
+    <div><span class="sw" style="background:var(--c-title)"></span><b>Title</b>Programme → Title<br><code>M.Tech (CSE -AI &amp; ML) with SAS</code></div>
+    <div><span class="sw" style="background:var(--c-name)"></span><b>Program Name</b>Programme → Program Name<br><code>Master of Technology (Computer Science and Engineering) with SAS</code></div>
+    <div><span class="sw" style="background:var(--c-partner)"></span><b>Partner</b>Programme → Partner<br><code>SAS</code></div>
+    <div><span class="sw" style="background:var(--c-label)"></span><b>Label</b>Program Defaults → Labels → Collaboration Prefix<br><code>In collaboration with</code></div>
+  </div>
+</section>
+
+<section id="fields">
+  <div class="kick">Fields</div>
+  <h2>The fields, and what each one controls</h2>
+  <p class="sub">In the CMS, open <b>Content Manager → Program</b> and the programme. The label is a single shared entry, <b>Content Manager → Program Defaults</b>.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Field</th><th>CMS location</th><th>API key</th><th>What it makes on screen</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip c-logo">Logo</span></td><td>Program → <b>Logo</b></td><td class="mono">logo</td><td>The partner mark above the heading. Only shown when Partner is not "Chandigarh University". If it's empty, the site falls back to the partner's favicon (Site · Nav → Partner Domains).</td></tr>
+      <tr><td><span class="chip c-title">Title</span></td><td>Program → <b>Title</b></td><td class="mono">title</td><td>Two pieces: the qualification <b>before the&nbsp;(</b> (“M.Tech”), and the italic specialisation, which is the text <b>inside the ( )</b> after the dash (“AI &amp; ML”).</td></tr>
+      <tr><td><span class="chip c-name">Program Name</span></td><td>Program → <b>Program Name</b></td><td class="mono">program_name</td><td>The long branch: the text <b>inside its ( )</b> (“Computer Science and Engineering”). It replaces the short form (“CSE”) in the heading.</td></tr>
+      <tr><td><span class="chip c-partner">Partner</span></td><td>Program → <b>Partner</b></td><td class="mono">partner</td><td>Switches the collaboration look on (logo, “in collaboration”, the line underneath). Its name is removed from the end of Title and Program Name (“with SAS”), then printed on the line underneath.</td></tr>
+      <tr><td><span class="chip c-label">Label</span></td><td>Program Defaults → Labels → <b>Collaboration Prefix</b></td><td class="mono">collaboration_prefix</td><td>Shared by every programme. Used whole on the line underneath (“In collaboration with SAS”), and without its last word “with” in the italic part (“in collaboration”).</td></tr>
+    </tbody>
+  </table></div>
+  <p class="path" style="margin-top:12px">Code: <code>lko-cu-main/src/lib/programs.ts</code> — <code>programmeHeroTitle</code> (line 213), <code>splitProgrammeTitle</code> (line 169). Template: <code>src/components/templates/ProgramDetail.tsx</code> lines 260–275; logo from <code>renderPartnerMark</code> (line 649). Mapper: <code>cms/src/plugins/site-sync/server/src/sections/data/programs.ts</code> lines 763–795.</p>
+</section>
+
+<section id="rules">
+  <div class="kick">How it's built</div>
+  <h2>The six steps, run on LCS301</h2>
+  <ol class="steps">
+    <li><b>Is it a collaboration?</b> Partner = <code>SAS</code>, which isn't “Chandigarh University” or empty, so yes. That turns on the logo, the “in collaboration” words and the line underneath.</li>
+    <li><b>Remove the partner from the end of Title and Program Name.</b><div class="ex">Title         M.Tech (CSE -AI &amp; ML) <span class="strike">with SAS</span>
+Program Name  Master of Technology (Computer Science and Engineering) <span class="strike">with SAS</span></div></li>
+    <li><b>Qualification = Title up to the first ( .</b><div class="ex"><mark>M.Tech</mark> (CSE -AI &amp; ML)</div></li>
+    <li><b>Split the Title's brackets at the dash.</b> Before the dash is the short branch, after it is the italic specialisation. (A bracket that only says “Hons.” is skipped.)<div class="ex">( CSE -<mark>AI &amp; ML</mark> )   →  short “CSE”, italic “AI &amp; ML”</div></li>
+    <li><b>Swap in the long branch from Program Name's brackets</b>, if it's longer than the qualification.<div class="ex">Master of Technology (<mark>Computer Science and Engineering</mark>)   →  “M.Tech Computer Science and Engineering”</div></li>
+    <li><b>Add the label.</b> For a collaboration, the italic part gets the Collaboration Prefix minus “with”, and the line underneath is the full prefix plus Partner.<div class="ex">“AI &amp; ML” + “in collaboration”     ·     “In collaboration with” + “SAS”</div></li>
+  </ol>
+</section>
+
+<section id="change">
+  <div class="kick">How to change</div>
+  <h2>I want to change…</h2>
+  <div class="rec">
+    <div><h3>“M.Tech”</h3><p>Edit <b>Title</b>, the text before the <code>(</code>.</p></div>
+    <div><h3>“Computer Science and Engineering”</h3><p>Edit <b>Program Name</b>, the text inside its <code>( )</code>.</p></div>
+    <div><h3>The italic “AI &amp; ML”</h3><p>Edit <b>Title</b>, the text after the <code>-</code> inside its <code>( )</code>. With no dash, the whole bracket becomes the italic part.</p></div>
+    <div><h3>“SAS” and the logo</h3><p>Edit <b>Partner</b> and <b>Logo</b>. Set Partner to “Chandigarh University” and the collaboration look disappears.</p></div>
+    <div><h3>“in collaboration” / “In collaboration with”</h3><p>Edit <b>Program Defaults → Collaboration Prefix</b>. This changes it on <b>every</b> collaboration programme.</p></div>
+    <div><h3>Screen readers / Google</h3><p>The hidden &lt;h1&gt; reads <b>Title</b> as typed, plus “In collaboration with SAS” when Title doesn't already name the partner.</p></div>
+  </div>
+</section>
+
+<section id="notes">
+  <div class="kick">Notes</div>
+  <h2>Things the code does, not the editor</h2>
+  <div class="note"><b>The italic “in collaboration” is added by code.</b>No editor typed it, and it repeats the line underneath (“In collaboration with SAS”), so the heading reads oddly. Removing it is a one-line site change in <code>splitProgrammeTitle</code> (lines 202–205) — waiting for a go.</div>
+  <div class="note"><b>36 programmes print their specialisation twice.</b>For example, B.Tech (Civil Engineering) shows “B.Tech Civil Engineering – <i>Civil Engineering</i>”. Step 5 adds the long branch to the qualification, and step 4 had already used the same bracket for the italic part. That's a site code bug, not data. A fix in <code>programmeHeroTitle</code> (line 227) would drop the italic part when it's already in the qualification — waiting for a go. Filter <b>repeats</b> below to see them.</div>
+  <div class="note" style="border-color:#1e3a8a;background:#f2f5fd"><b>15 programmes have no italic part</b>, because their Title has no specialisation in brackets (e.g. “MBA”, “B.Pharm”). That's expected.</div>
+</section>
+
+<section id="all">
+  <div class="kick">All programmes</div>
+  <h2>Every programme's heading, from the current constants</h2>
+  <p class="sub">What each programme's hero prints right now, computed with the same code the site runs. The three field columns are underlined in their field colours.</p>
+  <div class="stats">
+    <div><div class="num">71</div><span class="kick">Programmes</span></div>
+    <div><div class="num">16</div><span class="kick">Collaborations</span></div>
+    <div><div class="num">36</div><span class="kick">Repeat the specialisation</span></div>
+    <div><div class="num">6</div><span class="kick">Partner empty</span></div>
+  </div>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Search code, title, partner…" aria-label="Search programmes">
+    <button data-f="" aria-pressed="true">All</button>
+    <button data-f="rep" aria-pressed="false">Repeats</button>
+    <button data-f="one" aria-pressed="false">One voice</button>
+    <button data-f="nop" aria-pressed="false">Partner empty</button>
+  </div>
+  <div class="tw"><table id="all">
+    <thead><tr><th>Code</th><th>Title</th><th>Program Name</th><th>Partner</th><th>Hero shows</th><th>Flags</th></tr></thead>
+    <tbody>
+<tr data-f="one" data-q="lmb301 mba master of business administration chandigarh university"><td class="mono">LMB301</td><td><span class="f t">MBA</span></td><td><span class="f n">Master of Business Administration</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">MBA</div></td><td><span class="tag one">one voice</span></td></tr>
+<tr data-f="rep" data-q="lmb302 mba (applied finance) with pwc master of business administration (applied finance) with pwc pwc"><td class="mono">LMB302</td><td><span class="f t">MBA (Applied Finance) with PwC</span></td><td><span class="f n">Master of Business Administration (Applied Finance) with PwC</span></td><td><span class="f p">PwC</span></td><td class="out"><div class="ht">MBA Applied Finance – <i>Applied Finance in collaboration</i></div><div class="subl">In collaboration with PwC</div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lmb303 mba (fintech) with nal academy master of business administration (fintech) with nse academy nse academy"><td class="mono">LMB303</td><td><span class="f t">MBA (FinTech) with NAL Academy</span></td><td><span class="f n">Master of Business Administration (FinTech) with NSE Academy</span></td><td><span class="f p">NSE Academy</span></td><td class="out"><div class="ht">MBA FinTech – <i>FinTech in collaboration</i></div><div class="subl">In collaboration with NSE Academy</div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lmb305 mba (strategic hr) master of business administration (strategic hr) with aon aon"><td class="mono">LMB305</td><td><span class="f t">MBA (Strategic HR)</span></td><td><span class="f n">Master of Business Administration (Strategic HR) with AON</span></td><td><span class="f p">AON</span></td><td class="out"><div class="ht">MBA Strategic HR – <i>Strategic HR in collaboration</i></div><div class="subl">In collaboration with AON</div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lmb306 mba (digital marketing) master of business administration (digital marketing) chandigarh university"><td class="mono">LMB306</td><td><span class="f t">MBA (Digital Marketing)</span></td><td><span class="f n">Master of Business Administration (Digital Marketing)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">MBA Digital Marketing – <i>Digital Marketing</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lmb307 mba (data science and artificial intelligence) with sas master of business administration (data science and artificial intelligence) with sas sas"><td class="mono">LMB307</td><td><span class="f t">MBA (Data Science and Artificial Intelligence) with SAS</span></td><td><span class="f n">Master of Business Administration (Data Science and Artificial Intelligence) with SAS</span></td><td><span class="f p">SAS</span></td><td class="out"><div class="ht">MBA Data Science and Artificial Intelligence – <i>Data Science and Artificial Intelligence in collaboration</i></div><div class="subl">In collaboration with SAS</div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lmb308 mba (business analytics) with ibm master of business administration (business analytics) with ibm ibm"><td class="mono">LMB308</td><td><span class="f t">MBA (Business Analytics) with IBM</span></td><td><span class="f n">Master of Business Administration (Business Analytics) with IBM</span></td><td><span class="f p">IBM</span></td><td class="out"><div class="ht">MBA Business Analytics – <i>Business Analytics in collaboration</i></div><div class="subl">In collaboration with IBM</div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="one" data-q="lmc301 mca master of computer applications chandigarh university"><td class="mono">LMC301</td><td><span class="f t">MCA</span></td><td><span class="f n">Master of Computer Applications</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">MCA</div></td><td><span class="tag one">one voice</span></td></tr>
+<tr data-f="" data-q="lmc302 mca (ai &amp; ml) with sas master of computer applications (artificial intelligence and machine learning) with sas sas"><td class="mono">LMC302</td><td><span class="f t">MCA (AI &amp; ML) with SAS</span></td><td><span class="f n">Master of Computer Applications (Artificial Intelligence and Machine Learning) with SAS</span></td><td><span class="f p">SAS</span></td><td class="out"><div class="ht">MCA Artificial Intelligence and Machine Learning – <i>AI &amp; ML in collaboration</i></div><div class="subl">In collaboration with SAS</div></td><td></td></tr>
+<tr data-f="rep" data-q="lms304 m.sc (data science) master of science (data science) chandigarh university"><td class="mono">LMS304</td><td><span class="f t">M.Sc (Data Science)</span></td><td><span class="f n">Master of Science (Data Science)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">M.Sc Data Science – <i>Data Science</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="" data-q="lcs301 m.tech (cse -ai &amp; ml) with sas master of technology (computer science and engineering) with sas sas"><td class="mono">LCS301</td><td><span class="f t">M.Tech (CSE -AI &amp; ML) with SAS</span></td><td><span class="f n">Master of Technology (Computer Science and Engineering) with SAS</span></td><td><span class="f p">SAS</span></td><td class="out"><div class="ht">M.Tech Computer Science and Engineering – <i>AI &amp; ML in collaboration</i></div><div class="subl">In collaboration with SAS</div></td><td></td></tr>
+<tr data-f="rep" data-q="lmc303 mca (data science) master of computer application (data science) chandigarh university"><td class="mono">LMC303</td><td><span class="f t">MCA (Data Science)</span></td><td><span class="f n">Master of Computer Application (Data Science)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">MCA Data Science – <i>Data Science</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lcs302 m.tech (cse - data science) master of technology (computer science and engineering - data science) chandigarh university"><td class="mono">LCS302</td><td><span class="f t">M.Tech (CSE - Data Science)</span></td><td><span class="f n">Master of Technology (Computer Science and Engineering - Data Science)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">M.Tech Computer Science and Engineering - Data Science – <i>Data Science</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="one" data-q="lla301 llm in criminal law master of law chandigarh university"><td class="mono">LLA301</td><td><span class="f t">LLM in Criminal Law</span></td><td><span class="f n">Master of Law</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">LLM in Criminal Law</div></td><td><span class="tag one">one voice</span></td></tr>
+<tr data-f="rep nop" data-q="lms305 m.sc (biotechnology) master of science (biotechnology) "><td class="mono">LMS305</td><td><span class="f t">M.Sc (Biotechnology)</span></td><td><span class="f n">Master of Science (Biotechnology)</span></td><td><span class="f p"><em>empty</em></span></td><td class="out"><div class="ht">M.Sc Biotechnology – <i>Biotechnology</i></div></td><td><span class="tag rep">repeats</span><span class="tag nop">partner empty</span></td></tr>
+<tr data-f="rep" data-q="lmb309 mba (global business management) with grant thornton master of business administration (global business management) with grant thorton grant thornton"><td class="mono">LMB309</td><td><span class="f t">MBA (Global Business Management) with Grant Thornton</span></td><td><span class="f n">Master of Business Administration (Global Business Management) with Grant Thorton</span></td><td><span class="f p">Grant Thornton</span></td><td class="out"><div class="ht">MBA Global Business Management – <i>Global Business Management in collaboration</i></div><div class="subl">In collaboration with Grant Thornton</div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="one" data-q="lbb701 bba (hons.) bachelor of business administration (hons.) chandigarh university"><td class="mono">LBB701</td><td><span class="f t">BBA (Hons.)</span></td><td><span class="f n">Bachelor of Business Administration (Hons.)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">BBA (Hons.)</div></td><td><span class="tag one">one voice</span></td></tr>
+<tr data-f="rep" data-q="lbb702 bba (business analytics )(hons.) - deloitte bachelor of business administration (business analytics )(hons.) with deloitte deloitte"><td class="mono">LBB702</td><td><span class="f t">BBA (Business Analytics )(Hons.) - Deloitte</span></td><td><span class="f n">Bachelor of Business Administration (Business Analytics )(Hons.) with Deloitte</span></td><td><span class="f p">Deloitte</span></td><td class="out"><div class="ht">BBA Business Analytics – <i>Business Analytics in collaboration</i></div><div class="subl">In collaboration with Deloitte</div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lbb703 bba (digital marketing) (hons.) bachelor of business administration (digital marketing) (hons.) chandigarh university"><td class="mono">LBB703</td><td><span class="f t">BBA (Digital Marketing) (Hons.)</span></td><td><span class="f n">Bachelor of Business Administration (Digital Marketing) (Hons.)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">BBA Digital Marketing – <i>Digital Marketing</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lbb704 bba (branding and advertising) (hons.) bachelor of business administration (branding and advertising) (hons.) chandigarh university"><td class="mono">LBB704</td><td><span class="f t">BBA (Branding and Advertising) (Hons.)</span></td><td><span class="f n">Bachelor of Business Administration (Branding and Advertising) (Hons.)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">BBA Branding and Advertising – <i>Branding and Advertising</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lbb705 bba (fintech) (hons.) + acca with grant thornton bachelor of business administration (fintech) (hons.) + acca with grant thornton grant thornton"><td class="mono">LBB705</td><td><span class="f t">BBA (FinTech) (Hons.) + ACCA with Grant Thornton</span></td><td><span class="f n">Bachelor of Business Administration (FinTech) (Hons.) + ACCA with Grant Thornton</span></td><td><span class="f p">Grant Thornton</span></td><td class="out"><div class="ht">BBA FinTech – <i>FinTech in collaboration</i></div><div class="subl">In collaboration with Grant Thornton</div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="one" data-q="lco701 bachelor of commerce (hons.) bachelor of commerce (hons.) chandigarh university"><td class="mono">LCO701</td><td><span class="f t">Bachelor of Commerce (Hons.)</span></td><td><span class="f n">Bachelor of Commerce (Hons.)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">Bachelor of Commerce (Hons.)</div></td><td><span class="tag one">one voice</span></td></tr>
+<tr data-f="" data-q="lco702 b.com (hons.) + acca (international accounting and finance) with grant thornton b.com (hons.) + acca with grant thornton grant thornton"><td class="mono">LCO702</td><td><span class="f t">B.Com (Hons.) + ACCA (International Accounting and Finance) with Grant Thornton</span></td><td><span class="f n">B.Com (Hons.) + ACCA with Grant Thornton</span></td><td><span class="f p">Grant Thornton</span></td><td class="out"><div class="ht">B.Com (Hons.) + ACCA – <i>International Accounting and Finance in collaboration</i></div><div class="subl">In collaboration with Grant Thornton</div></td><td></td></tr>
+<tr data-f="rep" data-q="lbc701 bca (data science) with sas bachelor of computer applications (data science) with sas sas"><td class="mono">LBC701</td><td><span class="f t">BCA (Data Science) with SAS</span></td><td><span class="f n">Bachelor of Computer Applications (Data Science) with SAS</span></td><td><span class="f p">SAS</span></td><td class="out"><div class="ht">BCA Data Science – <i>Data Science in collaboration</i></div><div class="subl">In collaboration with SAS</div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="one" data-q="lbc702 bca (hons.) bachelor of computer applications (hons.) chandigarh university"><td class="mono">LBC702</td><td><span class="f t">BCA (Hons.)</span></td><td><span class="f n">Bachelor of Computer Applications (Hons.)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">BCA (Hons.)</div></td><td><span class="tag one">one voice</span></td></tr>
+<tr data-f="one" data-q="lbs707 best b.sc data science college in up | chandigarh university up bachelor of science (data science) (hons.) chandigarh university"><td class="mono">LBS707</td><td><span class="f t">Best B.Sc Data Science College in UP | Chandigarh University UP</span></td><td><span class="f n">Bachelor of Science (Data Science) (Hons.)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">Best B.Sc Data Science College in UP | Chandigarh University UP</div></td><td><span class="tag one">one voice</span></td></tr>
+<tr data-f="rep nop" data-q="lbt201 b.tech (biotechnology) bachelor of technology (biotechnology) "><td class="mono">LBT201</td><td><span class="f t">B.Tech (Biotechnology)</span></td><td><span class="f n">Bachelor of Technology (Biotechnology)</span></td><td><span class="f p"><em>empty</em></span></td><td class="out"><div class="ht">B.Tech Biotechnology – <i>Biotechnology</i></div></td><td><span class="tag rep">repeats</span><span class="tag nop">partner empty</span></td></tr>
+<tr data-f="rep" data-q="lce201 b.tech (civil engineering) bachelor of technology (civil engineering) chandigarh university"><td class="mono">LCE201</td><td><span class="f t">B.Tech (Civil Engineering)</span></td><td><span class="f n">Bachelor of Technology (Civil Engineering)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech Civil Engineering – <i>Civil Engineering</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="" data-q="lcs201 b.tech (cse) bachelor of technology (computer science and engineering) chandigarh university"><td class="mono">LCS201</td><td><span class="f t">B.Tech (CSE)</span></td><td><span class="f n">Bachelor of Technology (Computer Science and Engineering)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech Computer Science and Engineering – <i>CSE</i></div></td><td></td></tr>
+<tr data-f="" data-q="lcs202 b.tech (cse-ai &amp; ml) with microsoft bachelor of technology (computer science and engineering) with microsoft microsoft"><td class="mono">LCS202</td><td><span class="f t">B.Tech (CSE-AI &amp; ML) with Microsoft</span></td><td><span class="f n">Bachelor of Technology (Computer Science and Engineering) with Microsoft</span></td><td><span class="f p">Microsoft</span></td><td class="out"><div class="ht">B.Tech Computer Science and Engineering – <i>AI &amp; ML in collaboration</i></div><div class="subl">In collaboration with Microsoft</div></td><td></td></tr>
+<tr data-f="" data-q="lcs203 b.tech (cse -data science) with google bachelor of technology (computer science and engineering) with google google"><td class="mono">LCS203</td><td><span class="f t">B.Tech (CSE -Data Science) with Google</span></td><td><span class="f n">Bachelor of Technology (Computer Science and Engineering) with Google</span></td><td><span class="f p">Google</span></td><td class="out"><div class="ht">B.Tech Computer Science and Engineering – <i>Data Science in collaboration</i></div><div class="subl">In collaboration with Google</div></td><td></td></tr>
+<tr data-f="" data-q="lcs204 b.tech (cse-cyber security) with quick heal bachelor of technology (computer science and engineering) with quick heal quick heal"><td class="mono">LCS204</td><td><span class="f t">B.Tech (CSE-Cyber Security) with Quick Heal</span></td><td><span class="f n">Bachelor of Technology (Computer Science and Engineering) with Quick Heal</span></td><td><span class="f p">Quick Heal</span></td><td class="out"><div class="ht">B.Tech Computer Science and Engineering – <i>Cyber Security in collaboration</i></div><div class="subl">In collaboration with Quick Heal</div></td><td></td></tr>
+<tr data-f="" data-q="lcs205 b.tech (cse-cloud computing) with google bachelor of technology (computer science and engineering) with google google"><td class="mono">LCS205</td><td><span class="f t">B.Tech (CSE-Cloud Computing) with Google</span></td><td><span class="f n">Bachelor of Technology (Computer Science and Engineering) with Google</span></td><td><span class="f p">Google</span></td><td class="out"><div class="ht">B.Tech Computer Science and Engineering – <i>Cloud Computing in collaboration</i></div><div class="subl">In collaboration with Google</div></td><td></td></tr>
+<tr data-f="rep" data-q="lec201 b.tech (electronics and communication engineering) bachelor of technology (electronics and communication engineering) chandigarh university"><td class="mono">LEC201</td><td><span class="f t">B.Tech (Electronics and Communication Engineering)</span></td><td><span class="f n">Bachelor of Technology (Electronics and Communication Engineering)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech Electronics and Communication Engineering – <i>Electronics and Communication Engineering</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lee201 b.tech (electrical engineering) bachelor of technology (electrical engineering) chandigarh university"><td class="mono">LEE201</td><td><span class="f t">B.Tech (Electrical Engineering)</span></td><td><span class="f n">Bachelor of Technology (Electrical Engineering)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech Electrical Engineering – <i>Electrical Engineering</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lit201 b.tech (information technology) bachelor of technology (information technology) chandigarh university"><td class="mono">LIT201</td><td><span class="f t">B.Tech (Information Technology)</span></td><td><span class="f n">Bachelor of Technology (Information Technology)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech Information Technology – <i>Information Technology</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lme201 b.tech (mechanical engineering) bachelor of technology (mechanical engineering) chandigarh university"><td class="mono">LME201</td><td><span class="f t">B.Tech (Mechanical Engineering)</span></td><td><span class="f n">Bachelor of Technology (Mechanical Engineering)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech Mechanical Engineering – <i>Mechanical Engineering</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="one" data-q="lla201 llb bachelor of law chandigarh university"><td class="mono">LLA201</td><td><span class="f t">LLB</span></td><td><span class="f n">Bachelor of Law</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">LLB</div></td><td><span class="tag one">one voice</span></td></tr>
+<tr data-f="one" data-q="lla501 b.a. ll.b. (hons.) integrated program bachelor of arts and bachelor of laws(hons.) integrated chandigarh university"><td class="mono">LLA501</td><td><span class="f t">B.A. LL.B. (Hons.) Integrated Program</span></td><td><span class="f n">Bachelor of Arts and Bachelor of Laws(Hons.) Integrated</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.A. LL.B. (Hons.) Integrated Program</div></td><td><span class="tag one">one voice</span></td></tr>
+<tr data-f="one" data-q="lla502 bba. ll.b. (hons.) integrated bachelor of business administration and bachelor of law (hons) integrated chandigarh university"><td class="mono">LLA502</td><td><span class="f t">BBA. LL.B. (Hons.) Integrated</span></td><td><span class="f n">Bachelor of Business Administration and Bachelor of Law (Hons) Integrated</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">BBA. LL.B. (Hons.) Integrated</div></td><td><span class="tag one">one voice</span></td></tr>
+<tr data-f="rep" data-q="lba703 ba (journalism and mass communication) (hons.) bachelor of arts (journalism and mass communication) (hons.) chandigarh university"><td class="mono">LBA703</td><td><span class="f t">BA (Journalism and Mass Communication) (Hons.)</span></td><td><span class="f n">Bachelor of Arts (Journalism and Mass Communication) (Hons.)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">BA Journalism and Mass Communication – <i>Journalism and Mass Communication</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lbs702 b.sc (biotechnology) (hons.) bachelor of science ( biotechnology) (hons.) chandigarh university"><td class="mono">LBS702</td><td><span class="f t">B.Sc (Biotechnology) (Hons.)</span></td><td><span class="f n">Bachelor of Science ( Biotechnology) (Hons.)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Sc Biotechnology – <i>Biotechnology</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lbs703 b.sc (forensic science) (hons.) bachelor of science ( forensic science) (hons.) chandigarh university"><td class="mono">LBS703</td><td><span class="f t">B.Sc (Forensic Science) (Hons.)</span></td><td><span class="f n">Bachelor of Science ( Forensic Science) (Hons.)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Sc Forensic Science – <i>Forensic Science</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="one" data-q="lph201 b.pharm bachelor of pharmacy chandigarh university"><td class="mono">LPH201</td><td><span class="f t">B.Pharm</span></td><td><span class="f n">Bachelor of Pharmacy</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Pharm</div></td><td><span class="tag one">one voice</span></td></tr>
+<tr data-f="one" data-q="lbc703 bca (hons.) ai &amp; ml bachelor of computer applications (hons.) artificial intelligence &amp; machine learning chandigarh university"><td class="mono">LBC703</td><td><span class="f t">BCA (Hons.) AI &amp; ML</span></td><td><span class="f n">Bachelor of Computer Applications (Hons.) Artificial Intelligence &amp; Machine Learning</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">BCA (Hons.) AI &amp; ML</div></td><td><span class="tag one">one voice</span></td></tr>
+<tr data-f="rep nop" data-q="lae201 b.tech (aerospace engineering) bachelor of technology (aerospace engineering) "><td class="mono">LAE201</td><td><span class="f t">B.Tech (Aerospace Engineering)</span></td><td><span class="f n">Bachelor of Technology (Aerospace Engineering)</span></td><td><span class="f p"><em>empty</em></span></td><td class="out"><div class="ht">B.Tech Aerospace Engineering – <i>Aerospace Engineering</i></div></td><td><span class="tag rep">repeats</span><span class="tag nop">partner empty</span></td></tr>
+<tr data-f="" data-q="lbt202 b.tech lateral entry (biotechnology) bachelor of technology lateral entry (biotechnology) chandigarh university"><td class="mono">LBT202</td><td><span class="f t">B.Tech Lateral Entry (Biotechnology)</span></td><td><span class="f n">Bachelor of Technology Lateral Entry (Biotechnology)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech Lateral Entry – <i>Biotechnology</i></div></td><td></td></tr>
+<tr data-f="" data-q="lce202 b.tech lateral entry (civil engineering) bachelor of technology lateral entry (civil engineering) chandigarh university"><td class="mono">LCE202</td><td><span class="f t">B.Tech Lateral Entry (Civil Engineering)</span></td><td><span class="f n">Bachelor of Technology Lateral Entry (Civil Engineering)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech Lateral Entry – <i>Civil Engineering</i></div></td><td></td></tr>
+<tr data-f="rep" data-q="lcs206 b.tech lateral entry (computer science &amp; engineering) bachelor of technology lateral entry (computer science &amp; engineering) chandigarh university"><td class="mono">LCS206</td><td><span class="f t">B.Tech Lateral Entry (Computer Science &amp; Engineering)</span></td><td><span class="f n">Bachelor of Technology Lateral Entry (Computer Science &amp; Engineering)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech Lateral Entry Computer Science &amp; Engineering – <i>Computer Science &amp; Engineering</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="" data-q="lcs207 b.tech cse lateral entry (ai &amp; ml) bachelor of technology cse lateral entry (artificial intelligence) chandigarh university"><td class="mono">LCS207</td><td><span class="f t">B.Tech CSE Lateral Entry (AI &amp; ML)</span></td><td><span class="f n">Bachelor of Technology CSE Lateral Entry (Artificial Intelligence)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech CSE Lateral Entry – <i>AI &amp; ML</i></div></td><td></td></tr>
+<tr data-f="" data-q="lcs208 b.tech cse lateral entry (data science) bachelor of technology cse lateral entry (data science) chandigarh university"><td class="mono">LCS208</td><td><span class="f t">B.Tech CSE Lateral Entry (Data Science)</span></td><td><span class="f n">Bachelor of Technology CSE Lateral Entry (Data Science)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech CSE Lateral Entry – <i>Data Science</i></div></td><td></td></tr>
+<tr data-f="" data-q="lcs209 b.tech cse lateral entry (cyber security) bachelor of technology cse lateral entry (cyber security) chandigarh university"><td class="mono">LCS209</td><td><span class="f t">B.Tech CSE Lateral Entry (Cyber Security)</span></td><td><span class="f n">Bachelor of Technology CSE Lateral Entry (Cyber Security)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech CSE Lateral Entry – <i>Cyber Security</i></div></td><td></td></tr>
+<tr data-f="" data-q="lcs210 b.tech cse lateral entry (cloud computing) bachelor of technology cse lateral entry (cloud computing) chandigarh university"><td class="mono">LCS210</td><td><span class="f t">B.Tech CSE Lateral Entry (Cloud Computing)</span></td><td><span class="f n">Bachelor of Technology CSE Lateral Entry (Cloud Computing)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech CSE Lateral Entry – <i>Cloud Computing</i></div></td><td></td></tr>
+<tr data-f="" data-q="lcs211 b.tech cse (iot &amp; ai) bachelor of technology cse (internet of things and artificial intelligence) chandigarh university"><td class="mono">LCS211</td><td><span class="f t">B.Tech CSE (IoT &amp; AI)</span></td><td><span class="f n">Bachelor of Technology CSE (Internet of Things and Artificial Intelligence)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech CSE Internet of Things and Artificial Intelligence – <i>IoT &amp; AI</i></div></td><td></td></tr>
+<tr data-f="" data-q="lec202 b.tech lateral entry (electronics &amp; communication engineering) bachelor of technology lateral entry (electronics engineering) chandigarh university"><td class="mono">LEC202</td><td><span class="f t">B.Tech Lateral Entry (Electronics &amp; Communication Engineering)</span></td><td><span class="f n">Bachelor of Technology Lateral Entry (Electronics Engineering)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech Lateral Entry Electronics Engineering – <i>Electronics &amp; Communication Engineering</i></div></td><td></td></tr>
+<tr data-f="rep" data-q="lee202 b.tech lateral entry (electrical engineering) bachelor of technology lateral entry (electrical engineering) chandigarh university"><td class="mono">LEE202</td><td><span class="f t">B.Tech Lateral Entry (Electrical Engineering)</span></td><td><span class="f n">Bachelor of Technology Lateral Entry (Electrical Engineering)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech Lateral Entry Electrical Engineering – <i>Electrical Engineering</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lit202 b.tech lateral entry (information technology) bachelor of technology lateral entry (information technology) chandigarh university"><td class="mono">LIT202</td><td><span class="f t">B.Tech Lateral Entry (Information Technology)</span></td><td><span class="f n">Bachelor of Technology Lateral Entry (Information Technology)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech Lateral Entry Information Technology – <i>Information Technology</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lme202 b.tech lateral entry (mechanical technology) bachelor of technology lateral entry (mechanical technology) chandigarh university"><td class="mono">LME202</td><td><span class="f t">B.Tech Lateral Entry (Mechanical Technology)</span></td><td><span class="f n">Bachelor of Technology Lateral Entry (Mechanical Technology)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Tech Lateral Entry Mechanical Technology – <i>Mechanical Technology</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep nop" data-q="lra201 b.tech (robotics &amp; automation) bachelor of technology (robotics &amp; automation) "><td class="mono">LRA201</td><td><span class="f t">B.Tech (Robotics &amp; Automation)</span></td><td><span class="f n">Bachelor of Technology (Robotics &amp; Automation)</span></td><td><span class="f p"><em>empty</em></span></td><td class="out"><div class="ht">B.Tech Robotics &amp; Automation – <i>Robotics &amp; Automation</i></div></td><td><span class="tag rep">repeats</span><span class="tag nop">partner empty</span></td></tr>
+<tr data-f="rep" data-q="lde701 b.des (fashion &amp; design) bachelor of design (fashion &amp; design) chandigarh university"><td class="mono">LDE701</td><td><span class="f t">B.Des (Fashion &amp; Design)</span></td><td><span class="f n">Bachelor of Design (Fashion &amp; Design)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Des Fashion &amp; Design – <i>Fashion &amp; Design</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="rep" data-q="lde702 b.des (interior design) bachelor of design (interior design) chandigarh university"><td class="mono">LDE702</td><td><span class="f t">B.Des (Interior Design)</span></td><td><span class="f n">Bachelor of Design (Interior Design)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Des Interior Design – <i>Interior Design</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="" data-q="lbs708 b.sc (hons) (microbiology) bachelor of science (hons) (microbiology) chandigarh university"><td class="mono">LBS708</td><td><span class="f t">B.Sc (Hons) (Microbiology)</span></td><td><span class="f n">Bachelor of Science (Hons) (Microbiology)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Sc (Hons) – <i>Microbiology</i></div></td><td></td></tr>
+<tr data-f="rep" data-q="lph202 b.pharm (lateral entry) bachelor of pharmacy (lateral entry) chandigarh university"><td class="mono">LPH202</td><td><span class="f t">B.Pharm (Lateral Entry)</span></td><td><span class="f n">Bachelor of Pharmacy (Lateral Entry)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Pharm Lateral Entry – <i>Lateral Entry</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="one" data-q="lhm701 b.sc. hospitality &amp; hotel management bachelor of science (hospitality &amp; hotel management) chandigarh university"><td class="mono">LHM701</td><td><span class="f t">B.Sc. Hospitality &amp; Hotel Management</span></td><td><span class="f n">Bachelor of Science (Hospitality &amp; Hotel Management)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Sc. Hospitality &amp; Hotel Management</div></td><td><span class="tag one">one voice</span></td></tr>
+<tr data-f="rep" data-q="lhm702 b.sc (airlines &amp; airport management) bachelor of science (airlines &amp; airport management) chandigarh university"><td class="mono">LHM702</td><td><span class="f t">B.Sc (Airlines &amp; Airport Management)</span></td><td><span class="f n">Bachelor of Science (Airlines &amp; Airport Management)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Sc Airlines &amp; Airport Management – <i>Airlines &amp; Airport Management</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="" data-q="lba701 ba (hons) (liberal art) bachelor of arts (hons) (liberal art) chandigarh university"><td class="mono">LBA701</td><td><span class="f t">BA (Hons) (Liberal Art)</span></td><td><span class="f n">Bachelor of Arts (Hons) (Liberal Art)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">BA (Hons) – <i>Liberal Art</i></div></td><td></td></tr>
+<tr data-f="rep" data-q="lba702 ba (psychology) (hons) bachelor of arts (psychology) (hons) chandigarh university"><td class="mono">LBA702</td><td><span class="f t">BA (Psychology) (Hons)</span></td><td><span class="f n">Bachelor of Arts (Psychology) (Hons)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">BA Psychology – <i>Psychology</i></div></td><td><span class="tag rep">repeats</span></td></tr>
+<tr data-f="" data-q="lbs701 b.sc (hons) (animation, vfx &amp; gaming) bachelor of science (hons) (animation, vfx &amp; gaming) chandigarh university"><td class="mono">LBS701</td><td><span class="f t">B.Sc (Hons) (Animation, VFX &amp; Gaming)</span></td><td><span class="f n">Bachelor of Science (Hons) (Animation, VFX &amp; Gaming)</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Sc (Hons) – <i>Animation, VFX &amp; Gaming</i></div></td><td></td></tr>
+<tr data-f="one" data-q="lar201 b.arch bachelor of architecture chandigarh university"><td class="mono">LAR201</td><td><span class="f t">B.Arch</span></td><td><span class="f n">Bachelor of Architecture</span></td><td><span class="f p">Chandigarh University</span></td><td class="out"><div class="ht">B.Arch</div></td><td><span class="tag one">one voice</span></td></tr>
+<tr data-f="nop" data-q="lla302 master of laws (ll.m.) in corporate and business law master of laws (ll.m.) in corporate and business law "><td class="mono">LLA302</td><td><span class="f t">Master of Laws (LL.M.) in Corporate and Business Law</span></td><td><span class="f n">Master of Laws (LL.M.) in Corporate and Business Law</span></td><td><span class="f p"><em>empty</em></span></td><td class="out"><div class="ht">Master of Laws in Corporate and Business Law – <i>LL.M.</i></div></td><td><span class="tag nop">partner empty</span></td></tr>
+<tr data-f="one nop" data-q="lla303 master of laws in constitutional law master of laws in constitutional law "><td class="mono">LLA303</td><td><span class="f t">Master of Laws in Constitutional Law</span></td><td><span class="f n">Master of Laws in Constitutional Law</span></td><td><span class="f p"><em>empty</em></span></td><td class="out"><div class="ht">Master of Laws in Constitutional Law</div></td><td><span class="tag one">one voice</span><span class="tag nop">partner empty</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer>Built from <code>lko-cu-main/src/cu-constant/data/programs.ts</code> on 20 Oct 2026. After editors publish and the constants are regenerated, rebuild this page to refresh the table.</footer>
+</div>
+
+<script>
+(function(){
+  var q=document.getElementById('q'),btns=document.querySelectorAll('.tools button'),rows=document.querySelectorAll('#all tbody tr'),f='';
+  function run(){var s=q.value.trim().toLowerCase();rows.forEach(function(r){var ok=(!s||r.dataset.q.indexOf(s)>-1)&&(!f||(' '+r.dataset.f+' ').indexOf(' '+f+' ')>-1);r.style.display=ok?'':'none';});}
+  q.addEventListener('input',run);
+  btns.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});run();});});
+})();
+</script>
+</body>
+</html>

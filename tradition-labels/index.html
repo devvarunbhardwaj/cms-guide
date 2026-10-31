@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CMS Guide · Tradition Labels</title>
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--red:#D7101A;--ink:#111;--ink2:#161616;--grey:#f3f3f3;--text:#222;--muted:#6b6b6b;--line:#e6e6e6;--bg:#fff;--ok:#0f7a3a;color-scheme:light}
+*{box-sizing:border-box;border-radius:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 15px/1.55 Inter,system-ui,sans-serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+.kick{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+/* top bar */
+.bar{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff;border-bottom:1px solid #000}
+.bar .wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.bar a{color:#fff;text-decoration:none;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.8}
+.bar a:hover{opacity:1;text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:6px}
+.bar nav{display:flex;gap:16px;overflow-x:auto;white-space:nowrap;flex:1}
+.bar input{font:inherit;font-size:13px;padding:7px 10px;border:1px solid #444;background:#1c1c1c;color:#fff;width:240px;max-width:100%;outline:0}
+.bar input:focus{border-color:var(--red)}
+/* hero */
+.hero{padding:40px 0 28px}
+h1{font:600 clamp(28px,4vw,40px)/1.15 Inter,system-ui,sans-serif;margin:12px 0 14px;max-width:900px}
+.lede{max-width:700px;color:var(--muted);font-size:17px;margin:0}
+/* grids with hairline seams */
+.grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.stats{grid-template-columns:repeat(4,1fr)}
+.tile{background:var(--grey);padding:28px 24px}
+.tile.dark{background:var(--ink2);color:#fff}.tile.dark .kick{color:#aaa}
+.tile.red{background:var(--red);color:#fff}.tile.red .kick{color:#ffd5d7}
+.tile.white{background:#fff}
+.num{font:600 40px/1 Inter,system-ui,sans-serif;margin:0 0 10px}
+.tile small{display:block;color:var(--muted);font-size:13px;margin-top:6px}
+.tile.dark small{color:#bbb}.tile.red small{color:#ffe}
+section{padding:56px 0 8px}
+h2{font:600 clamp(22px,3vw,28px)/1.2 Inter,system-ui,sans-serif;margin:8px 0 14px}
+.sub{color:var(--muted);max-width:720px;margin:0 0 28px}
+.flow{grid-template-columns:repeat(5,1fr)}
+.flow .tile{min-height:170px}
+.flow h3{font:600 17px/1.3 Inter,system-ui,sans-serif;margin:10px 0 8px}
+.flow p{margin:0;font-size:13px}
+.two{grid-template-columns:1fr 1fr}
+.three{grid-template-columns:repeat(3,1fr)}
+h3.s{font:600 16px/1.3 Inter,system-ui,sans-serif;margin:0 0 10px}
+.tile p{margin:0 0 8px;font-size:14px}
+.tile ul{margin:0;padding-left:18px;font-size:14px}
+.tile.dark h3,.tile.red h3{color:#fff}
+/* key / text example boxes */
+.ex{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 12px}
+.ex div{background:#fff;border:1px solid var(--line);padding:8px 10px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:var(--ink)}
+.ex div span{display:block;font:600 10px/1.4 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.tile.dark .ex div{background:#1f1f1f;border-color:#333;color:#fff}
+.tile.dark .ex div span{color:#999}
+.verdict{font-weight:600;font-size:14px}
+.verdict.bad{color:var(--red)}.verdict.good{color:var(--ok)}
+.tile.dark .verdict.good{color:#6fdc9a}
+/* tables */
+.scroll{overflow-x:auto;border:1px solid var(--line);border-top:0}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:13px;table-layout:fixed}
+th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;text-align:left;padding:10px 12px;border-bottom:1px solid var(--ink);background:#fff;white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+tr.grp td{background:var(--ink2);color:#fff;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:10px 12px}
+tr.grp .n{color:#aaa;margin-left:8px}
+td.k code{color:var(--red);font-size:13px}
+td.t{color:var(--ink)}
+td.t .tok{background:#ffe1e3;padding:0 2px}
+#t col.c1{width:30%}#t col.c2{width:42%}#t col.c3{width:28%}
+.copy{font:600 10px/1 Inter,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);background:#fff;color:var(--muted);padding:5px 7px;cursor:pointer;margin-left:8px;vertical-align:1px}
+.copy:hover{border-color:var(--ink);color:var(--ink)}
+.copy.done{border-color:var(--ok);color:var(--ok)}
+.tag{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:1px 5px;border:1px solid var(--line);color:var(--muted);margin-left:6px;white-space:nowrap}
+#count{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#aaa;white-space:nowrap}
+tr.hide{display:none}
+#empty{display:none;padding:20px;color:var(--muted);border:1px solid var(--line);border-top:0}
+.tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 12px}
+.btn{font:600 11px/1 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:10px 14px;border:1px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer}
+.btn:hover{background:var(--red);border-color:var(--red)}
+footer{padding:48px 0 64px;color:var(--muted);font-size:12px}
+@media(max-width:900px){.stats,.flow,.two,.three{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.stats,.flow,.two,.three,.ex{grid-template-columns:1fr}.hero{padding:44px 0 32px}.bar input{width:100%}.num{font-size:34px}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap">
+<nav><a href="../">All guides</a><a href="#idea">The idea</a><a href="#steps">Steps</a><a href="#keys">All keys</a><a href="#rules">Rules</a></nav>
+<input id="q" type="search" placeholder="Filter keys or text..." aria-label="Filter label rows"><span id="count"></span>
+</div></div>
+
+<header class="hero"><div class="wrap">
+<div class="kick">CMS GUIDE · HOME · TRADITION</div>
+<h1>Tradition section labels</h1>
+<p class="lede">The short words in the Tradition section (tab names, card headings, buttons) come from the <b>labels</b> list in <b>Home · Tradition</b>. Each row has a key and a text. This page lists every key the website reads.</p>
+</div></header>
+
+<div class="wrap">
+<div class="grid stats">
+<div class="tile dark"><div class="kick">Keys the site reads</div><div class="num" id="nKeys">43</div><small>all in Home · Tradition › labels</small></div>
+<div class="tile red"><div class="kick">On the site today</div><div class="num">0</div><small>published labels are empty, so these spots are blank</small></div>
+<div class="tile"><div class="kick">In the CMS now</div><div class="num">3</div><small>placement, overview, research: keys missing <code>tab/</code></small></div>
+<div class="tile white"><div class="kick">Where</div><div class="num" style="font-size:22px;line-height:1.3">Content Manager › Home · Tradition › labels</div></div>
+</div>
+</div>
+
+<section id="idea"><div class="wrap">
+<div class="kick">The idea</div>
+<h2>The key is the address, the text is what shows</h2>
+<p class="sub">The website has a fixed set of spots, each with an address. It looks for the row whose key is exactly that address and prints its text there. If no row has that key, the spot stays blank. No error is shown.</p>
+<div class="grid two">
+<div class="tile">
+<div class="kick">Wrong</div>
+<div class="ex"><div><span>key</span>placement</div><div><span>text</span>Placement</div></div>
+<p class="verdict bad">Tab stays blank</p>
+<p>No spot is called <code>placement</code>, so the website ignores this row.</p>
+</div>
+<div class="tile dark">
+<div class="kick">Right</div>
+<div class="ex"><div><span>key</span>tab/placement</div><div><span>text</span>Placement</div></div>
+<p class="verdict good">First tab shows “Placement”</p>
+<p>The key matches the spot exactly. The first part (<code>tab/</code>) says which part of the section the spot is in.</p>
+</div>
+</div>
+<div class="grid three" style="margin-top:-1px">
+<div class="tile white"><h3 class="s">Key: never change it</h3><p>It is fixed by the website code. Copy it exactly: lowercase, with the <code>/</code> and the dashes, no spaces.</p></div>
+<div class="tile white"><h3 class="s">Text: change it any time</h3><p>Rewrite the words as you like. The website still knows where they go, because the key stays the same.</p></div>
+<div class="tile white"><h3 class="s">Order: doesn't matter</h3><p>Rows can be in any order. If the same key is entered twice, the first row is used.</p></div>
+</div>
+</div></section>
+
+<section id="steps"><div class="wrap">
+<div class="kick">How to add one</div>
+<h2>Steps</h2>
+<div class="grid flow">
+<div class="tile"><div class="kick">01</div><h3>Open</h3><p>Content Manager › Single types › <b>Home · Tradition</b>.</p></div>
+<div class="tile"><div class="kick">02</div><h3>Scroll to labels</h3><p>Fix the 3 existing rows first: add <code>tab/</code> to the start of each key.</p></div>
+<div class="tile"><div class="kick">03</div><h3>Add an entry</h3><p>Click <b>+ Add an entry</b>. Paste the <b>key</b> and the <b>text</b> from the table below.</p></div>
+<div class="tile dark"><div class="kick">04</div><h3>Save &amp; publish</h3><p>Save, then <b>Publish</b> the entry.</p></div>
+<div class="tile red"><div class="kick">05</div><h3>Publish to website</h3><p>Press <b>Publish to website</b> so the change reaches the site.</p></div>
+</div>
+</div></section>
+
+<section id="keys"><div class="wrap">
+<div class="kick">The list</div>
+<h2>All keys for Home · Tradition</h2>
+<p class="sub">Copy the key exactly. The text is the current wording from the live design, so it is a safe starting point. Leave anything in <span class="mono" style="background:#ffe1e3;padding:0 2px">{curly brackets}</span> as it is: the website fills in a number or name there. Rows tagged <b>screen reader</b> don't show on the page but are read aloud to blind users.</p>
+<div class="tools"><button class="btn" id="copyAll" type="button">Copy all as key → text list</button><span class="kick" id="copyMsg"></span></div>
+<div class="scroll" style="border-top:1px solid var(--line)">
+<table id="t"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup>
+<thead><tr><th>Key (copy exactly)</th><th>Text</th><th>Where it shows</th></tr></thead>
+<tbody id="tb"></tbody></table>
+</div>
+<div id="empty">No rows match.</div>
+</div></section>
+
+<section id="rules"><div class="wrap">
+<div class="kick">Good to know</div>
+<h2>Rules and notes</h2>
+<div class="grid two">
+<div class="tile"><h3 class="s">Only for Home · Tradition</h3><p>These keys go only in the labels list of <b>Home · Tradition</b>. Other entries (Site · Labels, About pages and so on) have their own lists with different keys. Putting a Tradition key there does nothing.</p></div>
+<div class="tile"><h3 class="s">Research tab: skip for now</h3><p>The CMS also knows keys like <code>landscape/…</code>, <code>labs/…</code>, <code>impact/…</code>, <code>patents/caption</code>. The website doesn't read them yet; that tab's words are still in the site code. Adding them is harmless but changes nothing.</p></div>
+<div class="tile dark"><h3 class="s">A typo fails silently</h3><p>A wrong key (missing <code>/</code>, extra space, capital letter) isn't flagged. The spot just stays blank. If a label doesn't show after publishing, check the key letter by letter.</p></div>
+<div class="tile red"><h3 class="s">Empty text = blank spot</h3><p>A row with the right key but no text also leaves the spot blank. Buttons with no text are hidden.</p></div>
+</div>
+</div></section>
+
+<footer><div class="wrap">Keys taken from the site code (<code>components/pages/TraditionSection.tsx</code>, <code>components/pages/tradition/*</code>) and the CMS mapper (<code>sections/pages/home/tradition.ts</code>). Texts are main's original wording. Checked 2026-10-20 against site d97ee61a and constants 3a3c304.</div></footer>
+
+<script>
+// [key, text, where it shows, screen-reader only]
+const G=[
+["Tab bar",[
+["tab/placement","Placement","1st tab name"],
+["tab/overview","Overview","2nd tab name"],
+["tab/research","Research","3rd tab name"],
+["tab-rail/aria","Legacy highlights","name of the tab bar",1],
+]],
+["Overview tab",[
+["overview/alumni-heading-lead","Carrying Forward","alumni card heading, first part"],
+["overview/alumni-heading-rest","a Proud Journey of Shaping Global Careers","alumni card heading, rest"],
+["overview/alumnus-dot-aria","Show alumnus {n}","alumni slider dots",1],
+["companies/title-lead","Top-Tier Companies","company logos card heading, first part"],
+["companies/title-rest","in CU's Placement Network","company logos card heading, rest"],
+["companies/more","700+ More","chip under the company logos"],
+["campus-life/heading-lead","Experience the","campus life card heading, first part"],
+["campus-life/heading-accent","Glorious Campus Life","campus life card heading, red part"],
+["campus-life/image-alt","The academic block at Chandigarh University Uttar Pradesh","campus life photo description",1],
+["campus-life/cta","See Campus Life","campus life card button"],
+["highlights/eyebrow","Highlights","small label above the highlight photos"],
+["international/figure","530+","big number on the university logos card"],
+["international/caption","International collaborations","caption under that number"],
+["international/cta","Learn More","university logos card button"],
+]],
+["Placement tab",[
+["package-growth/title-lead","Rising Every Year","package chart heading, first part"],
+["package-growth/title-rest","Highest Package, Batch by Batch","package chart heading, rest"],
+["package-growth/unit","LPA","unit after the package figure"],
+["package-growth/intl-chip","₹{amount} international","international package chip"],
+["package-growth/caption","Highest domestic offer, Batch {year}","caption under the package figure"],
+["package-growth/cta","View Placement Dashboard","package chart button"],
+["department/title-lead","Offers Land Everywhere","departments card heading, first part"],
+["department/title-rest","Placements by Department","departments card heading, rest"],
+["department/meta","{students} · {companies} cos","line under each department"],
+["package-mix/eyebrow","Recruiters by package","small label on the package mix card"],
+["package-mix/title","Where the {year} offers sat","package mix card heading"],
+["record-offers/eyebrow","Record offers","small label on the record offers card"],
+["record-offers/placed-at","Placed at {company}","line under each student"],
+["record-offers/dot-aria","Show {name}","record offers slider dots",1],
+["students-placed/caption","Students placed in {year}","caption under the students placed figure"],
+["students-placed/cta","See the Numbers","students placed card button"],
+["students-placed/footnote","{current} companies visited campus this year, up from {previous} the year before.","note under the students placed chart"],
+]],
+["Slides, film, background, mobile",[
+["slides/cta","Learn More","button on the highlight slides"],
+["slides/dot-aria","Go to slide {n}","highlight slide dots",1],
+["film/mute-aria","Mute video","campus film sound button (sound on)",1],
+["film/unmute-aria","Unmute video","campus film sound button (sound off)",1],
+["background/hexagon-alt","Hexagonal pattern background","desktop background pattern",1],
+["background/shadow-alt","Lower shadow background overlay","desktop bottom shadow",1],
+["mobile/dreaming-line","Dreaming of working with Fortune 500, Top 100 Companies of India, then Chandigarh University is the platform.","sentence on the mobile placement card"],
+["mobile/dashboard-cta","View Dashboard","mobile placement card button"],
+]],
+];
+
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const tok=s=>esc(s).replace(/\{\w+\}/g,m=>`<span class="tok">${m}</span>`);
+const tb=document.getElementById('tb');
+let n=0,html='';
+for(const [g,rows] of G){
+  html+=`<tr class="grp"><td colspan="3">${esc(g)}<span class="n">${rows.length}</span></td></tr>`;
+  for(const [k,t,w,sr] of rows){
+    n++;
+    html+=`<tr class="row" data-s="${esc((k+' '+t+' '+w).toLowerCase())}"><td class="k"><code>${esc(k)}</code><button class="copy" type="button" data-k="${esc(k)}">Copy</button></td><td class="t">${tok(t)}</td><td>${esc(w)}${sr?'<span class="tag">screen reader</span>':''}</td></tr>`;
+  }
+}
+tb.innerHTML=html;
+document.getElementById('nKeys').textContent=n;
+
+async function put(text){
+  try{await navigator.clipboard.writeText(text);return true}catch(e){
+    const a=document.createElement('textarea');a.value=text;document.body.appendChild(a);a.select();
+    let ok=false;try{ok=document.execCommand('copy')}catch(_){}a.remove();return ok;
+  }
+}
+tb.addEventListener('click',async e=>{
+  const b=e.target.closest('.copy');if(!b)return;
+  if(await put(b.dataset.k)){b.textContent='Copied';b.classList.add('done');setTimeout(()=>{b.textContent='Copy';b.classList.remove('done')},1200)}
+});
+document.getElementById('copyAll').addEventListener('click',async()=>{
+  const lines=G.flatMap(([,rows])=>rows.map(([k,t])=>`${k}\t${t}`)).join('\n');
+  document.getElementById('copyMsg').textContent=(await put(lines))?`Copied ${n} rows`:'Copy failed';
+});
+
+const q=document.getElementById('q'),cnt=document.getElementById('count'),empty=document.getElementById('empty');
+function filter(){
+  const v=q.value.trim().toLowerCase();let shown=0;
+  const trs=[...tb.querySelectorAll('tr')];let grp=null,gshown=0;
+  const close=()=>{if(grp)grp.classList.toggle('hide',gshown===0)};
+  for(const tr of trs){
+    if(tr.classList.contains('grp')){close();grp=tr;gshown=0;continue}
+    const hit=!v||tr.dataset.s.includes(v);tr.classList.toggle('hide',!hit);if(hit){shown++;gshown++}
+  }
+  close();
+  cnt.textContent=v?`${shown} / ${n}`:`${n} keys`;
+  empty.style.display=shown?'none':'block';
+}
+q.addEventListener('input',filter);filter();
+</script>
+</body>
+</html>
