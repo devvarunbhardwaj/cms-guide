@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CU About Pages Guide</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap">
+<style>
+/* Layout: one column of cards, same system as the CU CMS Guide (light, CU red, Inter + italic serif accent). */
+:root{
+  color-scheme:light;
+  --red:#D7101A;--ink:#111;--ink2:#1a1a1a;--grey:#f3f3f3;--line:#e6e6e6;--text:#222;--muted:#6b6b6b;--bg:#fff;--chip:#fbe7e8;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--serif:"Instrument Serif",Georgia,serif;--mono:ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 15px/1.55 var(--sans)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--ink)}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+em.s{font-family:var(--serif);font-style:italic;color:var(--red);font-weight:400}
+.kick{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+code{font:12px/1.4 var(--mono);background:var(--grey);padding:1px 5px;border-radius:4px;white-space:nowrap}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ink);color:#fff}
+.bar .wrap{display:flex;gap:18px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap}
+.bar a{text-decoration:none;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.75}
+.bar a:hover,.bar a:focus-visible{opacity:1}
+.bar b{font-size:13px;letter-spacing:.02em;margin-right:auto}
+main.wrap{padding-block:8px 48px}
+.card{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:24px 0;background:var(--bg)}
+.pad{padding:28px}
+h1{font:500 clamp(30px,4.5vw,44px)/1.12 var(--sans);margin:10px 0 12px;letter-spacing:-.01em;text-wrap:balance}
+h2{font:500 clamp(22px,3vw,30px)/1.2 var(--sans);margin:6px 0 6px;text-wrap:balance}
+h3{font:600 16px/1.3 var(--sans);margin:0}
+p{margin:0 0 10px;max-width:68ch}
+.muted{color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:6px 6px 6px 18px;text-decoration:none;font-size:14px;background:var(--bg)}
+.pill i{width:28px;height:28px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-style:normal;font-size:14px}
+.pill:focus-visible,.bar a:focus-visible,input:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.hero{display:grid;grid-template-columns:1.3fr 1fr}
+.hero>*{min-width:0}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.tile{background:var(--grey);padding:20px;min-height:116px;display:flex;flex-direction:column;justify-content:space-between}
+.tile .n{font:400 40px/1 var(--serif);font-variant-numeric:tabular-nums}
+.tile.dark{background:var(--ink2);color:#fff}.tile.dark .kick{color:#aaa}
+.tile.red{background:var(--red);color:#fff}.tile.red .kick{color:#ffd9db}
+.tile.white{background:var(--bg)}
+/* flow */
+.flow{display:grid;gap:10px;margin-top:18px}
+.node{border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:200px 1fr;gap:14px;align-items:baseline;background:var(--bg)}
+.node>*{min-width:0}
+.node b{font-weight:600}
+.node.hl{border-color:var(--red);background:var(--chip)}
+.arrow{text-align:center;font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.note{border-left:3px solid var(--red);padding:2px 0 2px 12px;margin:14px 0 0;font-size:14px}
+/* finder */
+input[type=search]{width:100%;font:inherit;font-size:16px;padding:13px 16px;border:1px solid var(--ink);border-radius:10px;outline:0;background:var(--bg);color:var(--text)}
+input[type=search]:focus{border-color:var(--red);box-shadow:0 0 0 3px #d7101a22}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chips a{font-size:12px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:var(--bg)}
+.chips a:hover{border-color:var(--red);color:var(--red)}
+/* page cards */
+.page{border:1px solid var(--line);border-radius:16px;margin:16px 0;overflow:hidden;background:var(--bg)}
+.page header{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;justify-content:space-between;padding:18px 22px;background:var(--grey);border-bottom:1px solid var(--line)}
+.page header>*{min-width:0}
+.path{font:13px/1.3 var(--mono);color:var(--red)}
+.entry{font-size:13px}
+.entry span{font-weight:600}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 22px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--bg)}
+td:first-child{width:38%;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.also{padding:12px 22px;font-size:13px;border-top:1px solid var(--line);background:var(--bg)}
+.also b{color:var(--red);font-weight:600}
+.unused{padding:10px 22px;font-size:12px;color:var(--muted);border-top:1px dashed var(--line)}
+.empty{display:none;padding:18px;color:var(--muted)}
+/* rules + publish */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.grid2>div{background:var(--bg);padding:22px;min-width:0}
+.steps{counter-reset:s;list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:baseline}
+.steps li::before{content:counter(s);width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;display:grid;place-items:center}
+ul.tight{margin:10px 0 0;padding-left:18px;display:grid;gap:6px}
+@media (max-width:760px){
+  .hero,.grid2{grid-template-columns:1fr}
+  .node{grid-template-columns:1fr;gap:4px}
+  td:first-child{width:auto}
+  th,td{padding:10px 14px}
+  .page header,.also,.unused{padding-left:14px;padding-right:14px}
+  .pad{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav class="bar" aria-label="Sections">
+  <div class="wrap">
+    <b>CU CMS · About</b>
+    <a href="../">All guides</a>
+    <a href="#how">How it fits</a>
+    <a href="#pages">Pages</a>
+    <a href="#rules">Rules</a>
+    <a href="#publish">Publish</a>
+    <a href="http://43.204.193.67/admin" target="_blank" rel="noopener">Open CMS ↗</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section class="card hero" aria-labelledby="t">
+    <div class="pad">
+      <div class="kick">CU Uttar Pradesh · CMS</div>
+      <h1 id="t">About pages, <em class="s">field by field</em></h1>
+      <p class="muted">Every page under <code>/about</code>, the CMS entry that holds it, and the field behind each part of the page.</p>
+      <p style="margin-top:18px"><a class="pill" href="http://43.204.193.67/admin" target="_blank" rel="noopener">43.204.193.67/admin <i>↗</i></a></p>
+    </div>
+    <div class="tiles">
+      <div class="tile dark"><span class="kick">Pages</span><span class="n">16</span></div>
+      <div class="tile white"><span class="kick">Page entries</span><span class="n">8</span></div>
+      <div class="tile"><span class="kick">Data lists</span><span class="n">3</span></div>
+      <div class="tile red"><span class="kick">Goes live with</span><span style="font-weight:600">Publish to website</span></div>
+    </div>
+  </section>
+
+  <section class="card pad" id="how" aria-labelledby="how-h">
+    <div class="kick">How it fits</div>
+    <h2 id="how-h">Four places make one About page</h2>
+    <div class="flow">
+      <div class="node"><b>Site · Nav</b><span>Menu → <code>ABOUT US</code> column: label and link of each item, in order.</span></div>
+      <div class="arrow">↓</div>
+      <div class="node"><b>Site · Route</b><span>One per address (filter <code>path</code>). Hero eyebrow, title, lede, hero image, SEO, bottom band, menu label.</span></div>
+      <div class="arrow">↓</div>
+      <div class="node hl"><b>Page entry</b><span>The page's own content: text, cards, photos. Listed per page below.</span></div>
+      <div class="arrow">↓</div>
+      <div class="node"><b>Data lists</b><span><code>Data · Leader</code>, <code>Data · Governing Body</code>, <code>Data · Placed Student</code>. One entry per person or body.</span></div>
+    </div>
+    <p class="note">Most About pages share one entry: <b>Page · About</b>. Its fields are prefixed with the page they fill, e.g. <code>Core Values · Values</code>. Section headings for all of them sit in <code>All pages · Band headings</code>.</p>
+  </section>
+
+  <section class="card pad" aria-labelledby="find-h">
+    <div class="kick">Find a page</div>
+    <h2 id="find-h">Type a page or a field</h2>
+    <label class="muted" for="q" style="display:block;margin:6px 0 10px;font-size:14px">Example: leadership, logo, PDF, testimonials</label>
+    <input id="q" type="search" placeholder="Search about pages" autocomplete="off">
+    <div class="chips" aria-label="Jump to a page">
+      <a href="#p-about">Overview</a><a href="#p-identity">Our Identity</a><a href="#p-vision">Vision & Mission</a><a href="#p-values">Core Values</a><a href="#p-leadership">Leadership</a><a href="#p-awards">Awards</a><a href="#p-edge">CU Edge</a><a href="#p-approvals">Approvals</a><a href="#p-infra">Infrastructure</a><a href="#p-testimonials">Testimonials</a><a href="#p-industry">Industry Collaboration</a><a href="#p-careers">Careers</a><a href="#p-governance">Governance</a><a href="#p-services">Student Services</a><a href="#p-isr">ISR</a><a href="#p-reach">How to Reach Us</a>
+    </div>
+  </section>
+
+  <section id="pages" aria-label="Pages">
+
+    <article class="page" id="p-about">
+      <header><h3>Overview</h3><span class="path">/about</span><span class="entry">Edit in <span>Page · About</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Opening statement</td><td><code>Hub · Overview intro</code> + <code>Hub · Statement image</code></td></tr>
+          <tr><td>"About" band</td><td><code>Hub · About paragraphs</code> + <code>Hub · Campus image</code></td></tr>
+          <tr><td>Experience pillars</td><td><code>Awards · Experience pillars</code></td></tr>
+          <tr><td>Record figures</td><td>Home · Tradition → stats. Heading: label <code>about/record-heading</code></td></tr>
+          <tr><td>Page list at the bottom</td><td>Automatic: every route in Site · Section <b>About</b></td></tr>
+        </tbody>
+      </table></div>
+      <div class="also"><b>Empty text hides its band.</b> The opening statement needs its intro; the "About" band needs at least one paragraph.</div>
+      <div class="unused">Not shown on the site: <code>Hub · About video URL</code>, <code>Hub · Act & statutes URL</code>.</div>
+    </article>
+
+    <article class="page" id="p-identity">
+      <header><h3>Our Identity</h3><span class="path">/about/our-identity</span><span class="entry">Edit in <span>Page · About</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Line under the heading</td><td><code>Identity · Lede</code></td></tr>
+          <tr><td>University logo + caption</td><td><code>Identity · Logo plate</code> (empty = hidden)</td></tr>
+          <tr><td>Seal and logo meaning blocks</td><td><code>Identity · Blocks</code></td></tr>
+        </tbody>
+      </table></div>
+    </article>
+
+    <article class="page" id="p-vision">
+      <header><h3>Vision & Mission</h3><span class="path">/about/vision-mission</span><span class="entry">Edit in <span>Page · About</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Intro line</td><td><code>vision_mission_intro</code></td></tr>
+          <tr><td>Vision statement + photo</td><td><code>Vision & Mission · Vision</code> + <code>Vision & Mission · Image</code></td></tr>
+          <tr><td>Mission points</td><td><code>Vision & Mission · Mission points</code> (title + body each)</td></tr>
+          <tr><td>Icons beside the headings</td><td><code>vision_icon_url</code>, <code>mission_icon_url</code></td></tr>
+          <tr><td>Sub-menu label</td><td><code>vision_subnav_label</code></td></tr>
+        </tbody>
+      </table></div>
+      <div class="unused">Not shown on the site: <code>Vision & Mission · Vision icon</code>, <code>Mission icon</code> (use the URL fields).</div>
+    </article>
+
+    <article class="page" id="p-values">
+      <header><h3>Core Values</h3><span class="path">/about/core-values</span><span class="entry">Edit in <span>Page · About</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Line under the heading</td><td><code>Core Values · Intro</code></td></tr>
+          <tr><td>The values (title, points, icon)</td><td><code>Core Values · Values</code>. Upload the icon in each value's <b>image</b>.</td></tr>
+          <tr><td>Closing note photo</td><td><code>Core Values · Note image</code></td></tr>
+        </tbody>
+      </table></div>
+      <div class="unused">Not shown on the site: <code>Core Values · Tagline band</code>.</div>
+    </article>
+
+    <article class="page" id="p-leadership">
+      <header><h3>Leadership</h3><span class="path">/about/leadership</span><span class="entry">Edit in <span>Data · Leader</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Each leader (photo, name, role, message)</td><td>One <code>Data · Leader</code> entry per person</td></tr>
+          <tr><td>Line over the leaders</td><td>Page · About → <code>Leadership · Intro</code></td></tr>
+        </tbody>
+      </table></div>
+    </article>
+
+    <article class="page" id="p-awards">
+      <header><h3>Awards & Recognitions</h3><span class="path">/about/awards-and-recognitions</span><span class="entry">Edit in <span>Page · About</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Heading</td><td><code>Awards · Intro</code></td></tr>
+          <tr><td>Rankings board</td><td><code>Awards · Rankings board</code> (figure, title, body, logo)</td></tr>
+          <tr><td>Trophy cards</td><td><code>Awards · Trophy blocks</code> (title, body, photo)</td></tr>
+          <tr><td>Regulator logo strip</td><td><code>Awards · Regulator logos</code></td></tr>
+          <tr><td>Closing note</td><td><code>Awards · Establishment note</code> + <code>Awards · Note image</code></td></tr>
+        </tbody>
+      </table></div>
+    </article>
+
+    <article class="page" id="p-edge">
+      <header><h3>CU Edge</h3><span class="path">/about/cu-edge</span><span class="entry">Edit in <span>Page · About</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Intro</td><td><code>cu_edge_intro</code></td></tr>
+          <tr><td>Six feature panels</td><td><code>CU Edge · Feature blocks</code> (title, body, photo)</td></tr>
+          <tr><td>Numbered points</td><td><code>CU Edge · Numbered points</code>: heading, red lead clause, paragraphs, ticked items, quotes, photo</td></tr>
+        </tbody>
+      </table></div>
+      <div class="unused">Not shown on the site: <code>CU Edge · Brochure spreads</code>, <code>CU Edge · Note image</code>.</div>
+    </article>
+
+    <article class="page" id="p-approvals">
+      <header><h3>Recognition & Approvals</h3><span class="path">/about/recognition-and-approvals</span><span class="entry">Edit in <span>Page · About</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Heading + line under it</td><td><code>Approvals · Headline</code>, <code>Approvals · Lede</code></td></tr>
+          <tr><td>Regulator cards (UGC, BCI, PCI…)</td><td><code>Approvals · Approvals</code>: acronym, name, body, seal, key, scope</td></tr>
+          <tr><td>Approval letters</td><td><code>Approvals · Documents</code>: image, caption, key of its approval (<code>ugc</code>, <code>bci</code>, <code>pci</code>, <code>coa</code>, <code>aiu</code>)</td></tr>
+          <tr><td>Closing note photo</td><td><code>Approvals · Note image</code></td></tr>
+        </tbody>
+      </table></div>
+    </article>
+
+    <article class="page" id="p-infra">
+      <header><h3>Infrastructure</h3><span class="path">/about/infrastructure</span><span class="entry">Edit in <span>Page · Infrastructure</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Overview text</td><td><code>Overview · Paragraphs</code></td></tr>
+          <tr><td>Campus film</td><td><code>Overview · Campus film YouTube id</code>, <code>title</code>, <code>poster</code></td></tr>
+          <tr><td>Facility photo gallery</td><td><code>Facilities · Gallery categories</code> (label, anchor id, photos)</td></tr>
+          <tr><td>Section headings</td><td><code>Band headings</code></td></tr>
+        </tbody>
+      </table></div>
+      <div class="also"><b>Also uses</b> Page · Leaf <code>/ai-features/smart-campus-features</code> for the smart campus blocks. <code>Smart campus · Fallback photo</code> fills a block with no photo.</div>
+    </article>
+
+    <article class="page" id="p-testimonials">
+      <header><h3>Testimonials</h3><span class="path">/about/testimonials</span><span class="entry">Edit in <span>Data · Placed Student</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Student cards (photo, quote, company)</td><td>One <code>Data · Placed Student</code> entry per student</td></tr>
+          <tr><td>Eyebrow, line under heading</td><td>Page · About → <code>Testimonials · Eyebrow</code>, <code>Testimonials · Subline</code></td></tr>
+          <tr><td>Filter tabs</td><td>Page · About → <code>testimonials_subnav_labels</code></td></tr>
+        </tbody>
+      </table></div>
+      <div class="unused">Not shown on the site: <code>Testimonials · Title</code> (the heading comes from Site · Route).</div>
+    </article>
+
+    <article class="page" id="p-industry">
+      <header><h3>Industry Collaboration</h3><span class="path">/about/industry-collaboration</span><span class="entry">Edit in <span>Page · Industry Collaboration</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Core cards</td><td><code>Core · Intro</code>, <code>Core · Cards</code></td></tr>
+          <tr><td>Partner wall, kinds of collaboration</td><td><code>Network · Partner wall</code>, <code>Network · Kinds of collaboration</code></td></tr>
+          <tr><td>Learning steps, benefits, tools</td><td><code>Transforms · Steps</code>, <code>Benefits · Cards</code>, <code>Tools · Groups</code></td></tr>
+          <tr><td>Experiential, certifications</td><td><code>Experiential · Steps</code>, <code>Certifications · Partner tabs</code></td></tr>
+          <tr><td>Global, experts, projects</td><td><code>Global · Cards</code>, <code>Experts · Cards</code>, <code>Projects · Cards</code></td></tr>
+          <tr><td>Section photos and headings</td><td><code>… · Photo</code> fields, <code>Band headings</code></td></tr>
+        </tbody>
+      </table></div>
+      <div class="also"><b>Also uses</b> Page · Placements → achievements for the success stories.</div>
+    </article>
+
+    <article class="page" id="p-careers">
+      <header><h3>Careers & Industry Opportunities</h3><span class="path">/about/careers-and-industry-opportunities</span><span class="entry">Edit in <span>Page · Careers & Industry Opportunities</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Overview</td><td><code>Overview · Paragraphs</code>, <code>Overview · Checklist</code>, <code>Overview · Photo</code></td></tr>
+          <tr><td>Internships</td><td><code>Internships · Companies</code>, <code>Internships · Films</code> (YouTube id, title, poster)</td></tr>
+          <tr><td>Readiness, services, skills</td><td><code>Readiness · Programmes</code>, <code>Services · Cards</code>, <code>Skills · List</code> + their photos</td></tr>
+          <tr><td>Section headings</td><td><code>Band headings</code></td></tr>
+        </tbody>
+      </table></div>
+      <div class="also"><b>Also uses</b> Page · Placements → achievements for the success stories.</div>
+    </article>
+
+    <article class="page" id="p-governance">
+      <header><h3>Governance</h3><span class="path">/about/governance</span><span class="entry">Edit in <span>Page · About · Governance</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Intro</td><td><code>Intro · Paragraphs</code></td></tr>
+          <tr><td>Statutory bodies (accordion)</td><td><code>Bodies · Statutory bodies</code>: pick from <code>Data · Governing Body</code>. Seat tables are edited there.</td></tr>
+          <tr><td>Buttons under the bodies</td><td><code>Bodies · Buttons</code></td></tr>
+          <tr><td>Committees list with PDFs</td><td><code>Committees · List</code>: name, slug, PDF, position</td></tr>
+        </tbody>
+      </table></div>
+      <div class="also"><b>Shared:</b> a Governing Body entry also shows on <code>/academics/professional-bodies</code>.</div>
+    </article>
+
+    <article class="page" id="p-services">
+      <header><h3>Student Services</h3><span class="path">/about/student-services</span><span class="entry">Edit in <span>Page · About · Student Services</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Overview</td><td><code>Overview · Heading</code>, <code>Overview · Intro paragraphs</code>, <code>Overview · Plate image</code>, <code>Overview · Student Affairs note</code></td></tr>
+          <tr><td>Six service cards</td><td><code>Services · Heading</code>, <code>Services · Cards</code></td></tr>
+          <tr><td>Everyday services grid</td><td><code>More · Heading</code>, <code>More · Button</code>, <code>More · Mentoring card</code>, <code>More · Facility photos</code></td></tr>
+        </tbody>
+      </table></div>
+      <div class="also"><b>Also uses</b> Page · Campus Life → facilities for the grid. A facility photo's name must match the facility name exactly (Food Courts, Libraries, Banking…).</div>
+    </article>
+
+    <article class="page" id="p-isr">
+      <header><h3>Institutional Social Responsibility</h3><span class="path">/about/institution-social-responsibility</span><span class="entry">Edit in <span>Page · About · Institutional Social Responsibility</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Opening band</td><td><code>Overview · Heading</code>, <code>Overview · Statement</code>, <code>Overview · Photograph</code></td></tr>
+          <tr><td>Four initiatives</td><td><code>Initiatives · Heading</code>, <code>Initiatives · Bands</code>: title, anchor id, position, text, photo carousel</td></tr>
+          <tr><td>Closing band</td><td><code>Closing · Heading</code> (red words in <code>*asterisks*</code>), <code>Closing · Statement</code>, <code>Closing · Photograph</code></td></tr>
+        </tbody>
+      </table></div>
+    </article>
+
+    <article class="page" id="p-reach">
+      <header><h3>How to Reach Us</h3><span class="path">/about/how-to-reach-us</span><span class="entry">Edit in <span>Page · About · How to Reach Us</span></span></header>
+      <div class="tbl"><table>
+        <thead><tr><th>On the page</th><th>Field</th></tr></thead>
+        <tbody>
+          <tr><td>Location band</td><td><code>Location · Heading</code>, <code>Location · Intro</code>, <code>Location · Video button</code></td></tr>
+          <tr><td>Map</td><td><code>Location · Map embed URL</code> (the Google Maps iframe <code>src</code>)</td></tr>
+          <tr><td>Contact cards</td><td><code>Location · Places</code></td></tr>
+          <tr><td>Bus routes band</td><td><code>Bus · Heading</code>, <code>Bus · Lede</code> (keep <code>{year}</code>), <code>Bus · Button</code></td></tr>
+        </tbody>
+      </table></div>
+      <div class="also"><b>Also uses</b> Page · Contact for the two helplines, and Page · Leaf <code>/campus-life/transportation</code> for the bus routes.</div>
+    </article>
+
+    <p class="empty" id="none">No About page matches that search.</p>
+  </section>
+
+  <section class="card" id="rules" aria-labelledby="rules-h">
+    <div class="pad" style="padding-bottom:0"><div class="kick">Rules</div><h2 id="rules-h">Five things that break pages</h2></div>
+    <div class="grid2" style="margin-top:18px">
+      <div><h3>Never change a key</h3><p class="muted" style="margin-top:6px">Band heading keys, label keys, anchor ids, slugs, approval keys. The site finds content by them. Edit the text, not the key.</p></div>
+      <div><h3>Empty hides</h3><p class="muted" style="margin-top:6px">An empty field or list removes that part of the page. Nothing is filled in for you.</p></div>
+      <div><h3>Keep the tokens</h3><p class="muted" style="margin-top:6px"><code>{year}</code>, <code>{n}</code>, <code>{label}</code> and <code>*red words*</code> are filled or styled by the site. Type around them.</p></div>
+      <div><h3>New page = developer</h3><p class="muted" style="margin-top:6px">Adding a Site · Route or a menu item does not create a page. Never edit a route's <code>path</code>.</p></div>
+      <div style="grid-column:1/-1"><h3>Images</h3><p class="muted" style="margin-top:6px">Upload in the Media Library and fill the alt text. The original file is served as-is, so keep photos under ~500 KB.</p></div>
+    </div>
+  </section>
+
+  <section class="card pad" id="publish" aria-labelledby="pub-h">
+    <div class="kick">Publish</div>
+    <h2 id="pub-h">From edit to live</h2>
+    <ol class="steps">
+      <li><span><b>Save</b> the entry.</span></li>
+      <li><span><b>Publish</b> the entry (top right). A draft never reaches the site.</span></li>
+      <li><span>Open <b>Website</b> in the left menu → <b>Publish to website</b>.</span></li>
+      <li><span>The site is rebuilt and uploaded. Changes appear after that.</span></li>
+    </ol>
+    <p class="note">Publishing an entry also publishes any draft changes another editor saved in it. Check the entry before you publish.</p>
+  </section>
+
+</main>
+
+<script>
+(function () {
+  var q = document.getElementById('q');
+  var pages = Array.prototype.slice.call(document.querySelectorAll('#pages .page'));
+  var none = document.getElementById('none');
+  q.addEventListener('input', function () {
+    var term = q.value.trim().toLowerCase();
+    var shown = 0;
+    pages.forEach(function (p) {
+      var hit = !term || p.textContent.toLowerCase().indexOf(term) !== -1;
+      p.hidden = !hit;
+      if (hit) shown++;
+    });
+    none.style.display = shown ? 'none' : 'block';
+  });
+})();
+</script>
+</body>
+</html>
