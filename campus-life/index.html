@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Campus Life Guide</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --red:#D7101A;--ink:#111;--grey:#f3f3f3;--line:#e6e6e6;--text:#222;--muted:#6b6b6b;--bg:#fff;--chip:#fbe7e8;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--serif:"Instrument Serif",Georgia,serif;--mono:ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 15px/1.55 var(--sans)}
+.wrap{max-width:1000px;margin:0 auto;padding-inline:16px}
+a{color:inherit}
+em.s{font-family:var(--serif);font-style:italic;color:var(--red);font-weight:400}
+.kick{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+code{font:12px/1.4 var(--mono);background:var(--grey);padding:1px 5px;border-radius:4px}
+.bar{position:sticky;top:0;z-index:5;background:var(--ink);color:#fff}
+.bar .wrap{display:flex;gap:18px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap}
+.bar a{text-decoration:none;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.75}
+.bar a:hover,.bar a:focus-visible{opacity:1}
+h1{font:500 clamp(30px,4.5vw,44px)/1.12 var(--sans);margin:10px 0 12px;letter-spacing:-.01em;text-wrap:balance}
+h2{font:500 clamp(22px,3vw,30px)/1.2 var(--sans);margin:6px 0 10px;text-wrap:balance}
+h3{font:600 16px/1.3 var(--sans);margin:0 0 6px}
+p{margin:0 0 10px;max-width:70ch}
+header{padding:36px 0 8px}
+section{padding:28px 0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:14px}
+.steps>div{background:var(--grey);padding:18px}
+.steps>div.dark{background:var(--ink);color:#fff}.steps>div.dark .kick{color:#aaa}
+.steps>div.red{background:var(--red);color:#fff}.steps>div.red .kick{color:#ffd9db}
+.block{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:18px 0}
+.block>.head{padding:18px 22px;background:var(--grey);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between}
+.block>.head>*{min-width:0}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 22px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.f{width:26%;font:13px/1.4 var(--mono);color:var(--red)}
+td.v{white-space:pre-wrap}
+td.c{width:1%;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.sub{padding:14px 22px 6px;border-top:1px solid var(--line)}
+button.cp{font:600 11px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:999px;padding:7px 11px;cursor:pointer}
+button.cp:hover,button.cp:focus-visible{border-color:var(--red);color:var(--red);outline:none}
+button.cp.ok{background:var(--red);border-color:var(--red);color:#fff}
+.note{border-left:3px solid var(--red);padding:2px 0 2px 12px;margin:14px 0 0;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tile{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg)}
+footer{padding:28px 0 48px;color:var(--muted);font-size:13px}
+@media (max-width:600px){th,td{padding:10px 14px}.block>.head,.sub{padding-inline:14px}td.f{width:34%}}
+</style>
+<style>
+.map td.w{font-size:13px}
+.map td.w b{color:var(--ink)}
+.pill{display:inline-block;font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;background:var(--chip);color:var(--red);border-radius:999px;padding:5px 8px;margin:0 4px 4px 0}
+ol.how{margin:8px 0 0;padding-left:20px}ol.how li{margin:0 0 6px}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap">
+<a href="../">All guides</a><a href="#map">Map</a><a href="#hub">Hub page</a><a href="#leaves">Facility pages</a><a href="#hostels">Hostels</a><a href="#clubs">Clubs</a><a href="#transport">Transport</a><a href="#events">Events</a><a href="#publish">Publish</a>
+</div></div>
+
+<header><div class="wrap">
+<div class="kick">CMS guide · Campus Life</div>
+<h1>Where to edit <em class="s">Campus Life</em></h1>
+<p>The Campus Life menu has one hub page (<code>/campus-life</code>), ten facility pages (Banking, Classrooms, Food Courts, Healthcare, Hostels, Laundry, Library, Sports, Student Clubs, Transportation) and the Events page. Their content lives in six places in the CMS. This guide shows which place holds which part of the page.</p>
+<p class="note">Every change needs <b>Save</b>, <b>Publish</b>, then <b>Publish to website</b>. Until you press <b>Publish to website</b>, the live site doesn't change.</p>
+</div></header>
+
+<section id="map"><div class="wrap">
+<div class="kick">Overview</div>
+<h2>What lives where</h2>
+<div class="block map"><div class="tbl"><table>
+<thead><tr><th>On the website</th><th>In the CMS</th><th>Field</th></tr></thead>
+<tbody>
+<tr><td>Hero of any Campus Life page (eyebrow, title, line under it, hero photo)</td><td class="w"><b>Site · Route</b> › the row with that page's path</td><td class="f">eyebrow, title, lede, hero_image, hero_image_mobile</td></tr>
+<tr><td>Hub: photo gallery tabs (Infrastructure, AI Labs, Events, Fests, Academic)</td><td class="w"><b>Home · Campus Life</b></td><td class="f">galleries</td></tr>
+<tr><td>Hub: gallery heading, panorama, facility cards, hostel table</td><td class="w"><b>Page · Campus Life</b></td><td class="f">gallery_*, panorama, facilities_*, facilities, hostel_heading, hostel_facts</td></tr>
+<tr><td>Hub: video reel at the bottom</td><td class="w"><b>Home · See Us In Action</b> (same as the home page)</td><td class="f">heading, categories, carousel</td></tr>
+<tr><td>Facility pages: intro, sections, photos</td><td class="w"><b>Page · Leaf</b> › the entry whose <code>site_route</code> is that page</td><td class="f">intro, blocks, gallery</td></tr>
+<tr><td>Student Clubs: chips, club list, event calendar</td><td class="w"><b>Page · Leaf</b> › /campus-life/student-clubs</td><td class="f">chips, club_groups, event_calendar</td></tr>
+<tr><td>Transportation: bus routes</td><td class="w"><b>Page · Leaf</b> › /campus-life/transportation</td><td class="f">bus_routes, bus_routes_year</td></tr>
+<tr><td>Hostels: fact picker beside the photo</td><td class="w"><b>Page · Campus Life</b> (shared with the hub table)</td><td class="f">hostel_facts</td></tr>
+<tr><td>Events page: heading, hero, filter buttons</td><td class="w"><b>Page · Campus Life</b></td><td class="f">events_heading, events_lede, events_hero_image, events_filters, events_per_page</td></tr>
+<tr><td>Events page: each event card</td><td class="w"><b>Data · Campus Event</b> (one entry per event)</td><td class="f">title, date, category, body, photos, order</td></tr>
+</tbody></table></div></div>
+</div></section>
+
+<section id="hub"><div class="wrap">
+<div class="kick">/campus-life</div>
+<h2>Hub page</h2>
+<div class="steps">
+<div><div class="kick">Top</div><h3>Hero</h3><p><b>Site · Route</b> › path <code>/campus-life</code> › <code>title</code>, <code>lede</code>.</p></div>
+<div><div class="kick">01</div><h3>Photo gallery</h3><p><b>Home · Campus Life</b> › <code>galleries</code>. One entry per tab (max 5). Pick the tab in <code>group</code> and add photos to <code>images</code>. Portrait versions go in <code>images_mobile</code>, in the same order.</p></div>
+<div><div class="kick">02</div><h3>Panorama</h3><p><b>Page · Campus Life</b> › <code>panorama</code>, at most 3 frames. Each frame has an <code>image</code>, an <code>eyebrow</code>, a <code>title</code> and a <code>body</code>.</p></div>
+<div><div class="kick">03</div><h3>Facility cards</h3><p><b>Page · Campus Life</b> › <code>facilities</code>. Each card has a <code>name</code>, a <code>body</code>, an <code>image</code> and an <code>href</code> (the page it opens).</p></div>
+<div><div class="kick">04</div><h3>Hostel table</h3><p><b>Page · Campus Life</b> › <code>hostel_heading</code> + <code>hostel_facts</code> (label / value).</p></div>
+<div class="dark"><div class="kick">05</div><h3>Video reel</h3><p><b>Home · See Us In Action</b>. Changing it also changes the home page.</p></div>
+</div>
+<div class="block"><div class="head"><h3>Page · Campus Life: hub text fields</h3><span class="kick">headings above each part</span></div>
+<div class="tbl"><table><thead><tr><th>Field</th><th>What it is</th></tr></thead><tbody>
+<tr><td class="f">gallery_heading</td><td>Heading over the gallery. <code>{count}</code> is replaced with the number of photos, e.g. <i>{count} photographs from campus</i>.</td></tr>
+<tr><td class="f">gallery_intro</td><td>Paragraph under that heading.</td></tr>
+<tr><td class="f">gallery_title</td><td>Small title on the gallery itself.</td></tr>
+<tr><td class="f">facilities_heading / facilities_intro</td><td>Heading and paragraph over the facility cards.</td></tr>
+<tr><td class="f">hostel_heading</td><td>Heading over the hostel table.</td></tr>
+<tr><td class="f">panorama_label, panorama_slide_*, panorama_skip_*</td><td>Screen-reader and Skip button text. Already filled; leave as is.</td></tr>
+</tbody></table></div></div>
+</div></section>
+
+<section id="leaves"><div class="wrap">
+<div class="kick">/campus-life/&lt;facility&gt;</div>
+<h2>Facility pages</h2>
+<p>Banking, Classrooms, Food Courts, Healthcare, Hostels, Laundry, Library &amp; e-Resources, Sports &amp; Fitness, Student Clubs and Transportation all use <b>Page · Leaf</b>. Open Content Manager › <b>Page · Leaf</b> and pick the entry whose <code>site_route</code> matches the page.</p>
+<div class="block"><div class="head"><h3>Page · Leaf fields</h3><span class="kick">same on every facility page</span></div>
+<div class="tbl"><table><thead><tr><th>Field</th><th>What it is</th></tr></thead><tbody>
+<tr><td class="f">intro</td><td>The line under the page title. If empty, the <code>lede</code> from Site · Route is used.</td></tr>
+<tr><td class="f">blocks</td><td>The page sections, in order. Each one is listed in the side menu.</td></tr>
+<tr><td class="f">blocks › anchor_id</td><td>Internal ID used by the side menu. Lowercase letters and dashes. Don't change it on existing blocks.</td></tr>
+<tr><td class="f">blocks › label</td><td>Name shown in the side menu.</td></tr>
+<tr><td class="f">blocks › title</td><td>The big heading of the section.</td></tr>
+<tr><td class="f">blocks › index</td><td>Small number above the heading: <code>01</code>, <code>02</code>…</td></tr>
+<tr><td class="f">blocks › paragraphs</td><td>One entry per paragraph (field <code>text</code>).</td></tr>
+<tr><td class="f">blocks › image / image_wide</td><td>Optional photo for the section. Tick <code>image_wide</code> for a full-width photo.</td></tr>
+<tr><td class="f">gallery</td><td>Photo groups. <code>group_id</code> is the internal ID, <code>label</code> is the tab name and <code>images</code> holds the photos. <code>anchor_id</code> places the gallery under that block; leave it empty to put it under the last block.</td></tr>
+<tr><td class="f">labels › gallery_title</td><td>Title shown over the gallery.</td></tr>
+</tbody></table></div></div>
+<p class="note">Alt text for every photo is set once in the <b>Media Library</b> (click the photo › Alternative text), not on the page.</p>
+</div></section>
+
+<section id="hostels"><div class="wrap">
+<div class="kick">/campus-life/hostels</div>
+<h2>Hostels</h2>
+<p>Sections and photos are in <b>Page · Leaf</b> › /campus-life/hostels, like any facility page. The fact picker beside the photo (Rooms, Mess, Wi-Fi…) reads <b>Page · Campus Life</b> › <code>hostel_facts</code>, the same list as the hub table, so one edit updates both pages.</p>
+<div class="block"><div class="tbl"><table><thead><tr><th>hostel_facts field</th><th>What it is</th></tr></thead><tbody>
+<tr><td class="f">label</td><td>The fact name, e.g. <i>Rooms</i>.</td></tr>
+<tr><td class="f">value</td><td>The fact itself, as printed on the page.</td></tr>
+<tr><td class="f">image</td><td>Photo the picker shows for this fact. The hub table ignores it.</td></tr>
+</tbody></table></div></div>
+</div></section>
+
+<section id="clubs"><div class="wrap">
+<div class="kick">/campus-life/student-clubs</div>
+<h2>Student Clubs</h2>
+<p><b>Page · Leaf</b> › /campus-life/student-clubs has three extra lists.</p>
+<div class="block"><div class="tbl"><table><thead><tr><th>Field</th><th>What it is</th></tr></thead><tbody>
+<tr><td class="f">chips</td><td>The row of category buttons. <code>label</code> = text; <code>anchor_id</code> = the section it jumps to.</td></tr>
+<tr><td class="f">club_groups</td><td>One entry per category. <code>key</code> = internal ID (lowercase-with-dashes), <code>label</code> = category name, <code>clubs</code> = the clubs (<code>name</code> + <code>body</code>).</td></tr>
+<tr><td class="f">event_calendar</td><td>One row per event: <code>event</code>, <code>club</code>, <code>department</code> (optional), <code>month</code> and <code>week</code>.</td></tr>
+<tr><td class="f">event_calendar_period</td><td>The period the calendar covers, e.g. <i>2025–26</i>.</td></tr>
+</tbody></table></div></div>
+</div></section>
+
+<section id="transport"><div class="wrap">
+<div class="kick">/campus-life/transportation</div>
+<h2>Transportation</h2>
+<div class="block"><div class="tbl"><table><thead><tr><th>Field</th><th>What it is</th></tr></thead><tbody>
+<tr><td class="f">bus_routes</td><td>One entry per route. <code>code</code> = route number, <code>route</code> = route name, <code>city</code> = tab it shows under (a new city makes a new tab), <code>stops</code> = one entry per stop, in order.</td></tr>
+<tr><td class="f">bus_routes_year</td><td>The session the routes are for, e.g. <i>2025–26</i>.</td></tr>
+</tbody></table></div></div>
+</div></section>
+
+<section id="events"><div class="wrap">
+<div class="kick">/campus-life/events</div>
+<h2>Events</h2>
+<h3 style="margin-top:8px">Add a new event</h3>
+<ol class="how">
+<li>Content Manager › <b>Data · Campus Event</b> › <b>Create new entry</b>.</li>
+<li>Fill <code>title</code>, <code>date</code> (free text, e.g. <i>12–14 Feb 2026</i>), <code>body</code> and <code>category</code>.</li>
+<li><code>slug</code>: lowercase-with-dashes. Don't change it once published.</li>
+<li><code>order</code>: position in the list (1 = first).</li>
+<li><code>photos</code>: add the event pictures.</li>
+<li>Optional fields:
+<ul>
+<li><code>organiser</code>.</li>
+<li><code>school</code> / <code>programs</code>: shows the event on those pages too.</li>
+<li><code>news_slug</code>: links to a news article.</li>
+</ul></li>
+<li>Save › Publish › <b>Publish to website</b>.</li>
+</ol>
+<div class="block" style="margin-top:18px"><div class="head"><h3>Page · Campus Life: events page fields</h3></div>
+<div class="tbl"><table><thead><tr><th>Field</th><th>What it is</th></tr></thead><tbody>
+<tr><td class="f">events_heading</td><td>Heading over the event list.</td></tr>
+<tr><td class="f">events_lede</td><td>Line under the page title.</td></tr>
+<tr><td class="f">events_hero_image / _mobile</td><td>Hero photo (phone version optional).</td></tr>
+<tr><td class="f">events_filters</td><td>The filter buttons, in order. <code>key</code> = category, <code>label</code> = button text.</td></tr>
+<tr><td class="f">events_per_page</td><td>Events per page (default 9).</td></tr>
+</tbody></table></div></div>
+<p><span class="pill">Category keys</span> <code>all</code> <code>Academics</code> <code>Ai</code> <code>Cultural</code> <code>Orientation</code> <code>eventsCompetitions</code> <code>Sports</code></p>
+</div></section>
+
+<section id="publish"><div class="wrap">
+<div class="kick">Always</div>
+<h2>Publish</h2>
+<div class="steps">
+<div><div class="kick">01</div><h3>Save</h3><p>Saves a draft.</p></div>
+<div class="dark"><div class="kick">02</div><h3>Publish</h3><p>Marks the entry ready.</p></div>
+<div class="red"><div class="kick">03</div><h3>Publish to website</h3><p>Rebuilds the site. Live in a few minutes.</p></div>
+</div>
+</div></section>
+
+<footer><div class="wrap">Fields taken from the CMS schema: Page · Campus Life, Home · Campus Life, Page · Leaf, Data · Campus Event, Site · Route and Home · See Us In Action. 2 Nov 2026.</div></footer>
+</body>
+</html>
