@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Admissions Video Guide</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --red:#D7101A;--ink:#111;--grey:#f3f3f3;--line:#e6e6e6;--text:#222;--muted:#6b6b6b;--bg:#fff;--chip:#fbe7e8;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--serif:"Instrument Serif",Georgia,serif;--mono:ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 15px/1.55 var(--sans)}
+.wrap{max-width:1000px;margin:0 auto;padding-inline:16px}
+a{color:inherit}
+em.s{font-family:var(--serif);font-style:italic;color:var(--red);font-weight:400}
+.kick{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+code{font:12px/1.4 var(--mono);background:var(--grey);padding:1px 5px;border-radius:4px}
+.bar{position:sticky;top:0;z-index:5;background:var(--ink);color:#fff}
+.bar .wrap{display:flex;gap:18px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap}
+.bar a{text-decoration:none;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.75}
+.bar a:hover,.bar a:focus-visible{opacity:1}
+h1{font:500 clamp(30px,4.5vw,44px)/1.12 var(--sans);margin:10px 0 12px;letter-spacing:-.01em;text-wrap:balance}
+h2{font:500 clamp(22px,3vw,30px)/1.2 var(--sans);margin:6px 0 10px;text-wrap:balance}
+h3{font:600 16px/1.3 var(--sans);margin:0 0 6px}
+p{margin:0 0 10px;max-width:70ch}
+header{padding:36px 0 8px}
+section{padding:28px 0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:14px}
+.steps>div{background:var(--grey);padding:18px}
+.steps>div.dark{background:var(--ink);color:#fff}.steps>div.dark .kick{color:#aaa}
+.steps>div.red{background:var(--red);color:#fff}.steps>div.red .kick{color:#ffd9db}
+.block{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:18px 0}
+.block>.head{padding:18px 22px;background:var(--grey);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between}
+.block>.head>*{min-width:0}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 22px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.f{width:26%;font:13px/1.4 var(--mono);color:var(--red)}
+td.v{white-space:pre-wrap}
+td.c{width:1%;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.sub{padding:14px 22px 6px;border-top:1px solid var(--line)}
+button.cp{font:600 11px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:999px;padding:7px 11px;cursor:pointer}
+button.cp:hover,button.cp:focus-visible{border-color:var(--red);color:var(--red);outline:none}
+button.cp.ok{background:var(--red);border-color:var(--red);color:#fff}
+.note{border-left:3px solid var(--red);padding:2px 0 2px 12px;margin:14px 0 0;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tile{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg)}
+footer{padding:28px 0 48px;color:var(--muted);font-size:13px}
+@media (max-width:600px){th,td{padding:10px 14px}.block>.head,.sub{padding-inline:14px}td.f{width:34%}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a href="../">All guides</a><a href="#poster">Show the video</a><a href="#video">Change the video</a></div></div>
+
+<header><div class="wrap">
+<div class="kick">CMS guide · Admissions · Video</div>
+<h1>The <em class="s">Overview</em> video on admission pages</h1>
+<p>The video is shown only after it has a cover photo.</p>
+</div></header>
+
+<section id="poster"><div class="wrap">
+<div class="kick">01</div>
+<h2>Show the video</h2>
+<p><a href="http://43.204.193.67/admin/content-manager/single-types/api::admissions-page.admissions-page" target="_blank" rel="noopener"><b>Open Page · Admissions ↗</b></a></p>
+<p>Go to the <b>plates</b> list, then <b>+ Add an entry</b>:</p>
+<div class="block"><div class="tbl"><table><thead><tr><th>Field</th><th>Value</th><th></th></tr></thead><tbody id="p"></tbody></table></div></div>
+<p>Need the video on other admission pages too? Add one entry per page, using that page's key:</p>
+<div class="block"><div class="tbl"><table><thead><tr><th>Page</th><th>key</th><th></th></tr></thead><tbody id="k"></tbody></table></div></div>
+</div></section>
+
+<section id="video"><div class="wrap">
+<div class="kick">02 · optional</div>
+<h2>Change the video</h2>
+<p><a href="http://43.204.193.67/admin/content-manager/single-types/api::infrastructure-page.infrastructure-page" target="_blank" rel="noopener"><b>Open Page · Infrastructure ↗</b></a></p>
+<p>Field <code>campus_film_id</code>: paste only the YouTube ID, which is the part after <code>v=</code>.</p>
+<p>Example: <code>youtube.com/watch?v=<b>oXyLEEPTPdk</b></code> → <code>oXyLEEPTPdk</code></p>
+<p class="note">All admission pages play this one video.</p>
+</div></section>
+
+<script>
+const P=[["key","note/after-12th"],["image","the video's cover photo"]];
+const K=[["After 12th","note/after-12th"],["After Graduation","note/after-graduation"],["Lateral Entry","note/lateral-entry"],["Integrated Programs","note/integrated-programs"],["Specialized Programs","note/specialized-programs"],["After Post Graduation","note/after-post-graduation"]];
+function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function cp(v){const b=el("button","cp","Copy");b.type="button";b.onclick=async()=>{try{await navigator.clipboard.writeText(v)}catch(e){const t=document.createElement("textarea");t.value=v;document.body.appendChild(t);t.select();document.execCommand("copy");t.remove()}b.textContent="Copied";b.classList.add("ok");setTimeout(()=>{b.textContent="Copy";b.classList.remove("ok")},1200)};const td=el("td","c");td.appendChild(b);return td}
+function row(id,a,b,copy){const tr=el("tr");tr.appendChild(el("td","f",a));tr.appendChild(el("td","v",b));tr.appendChild(copy?cp(b):el("td","c",""));document.getElementById(id).appendChild(tr)}
+row("p","key","note/after-12th",1);row("p","image","Pick the cover photo",0);
+K.forEach(([a,b])=>row("k",a,b,1));
+</script>
+</body>
+</html>
