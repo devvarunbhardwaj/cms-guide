@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CMS Work Log</title><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --red:#D7101A;--ink:#111;--grey:#f3f3f3;--line:#e6e6e6;--text:#222;--muted:#6b6b6b;--bg:#fff;--chip:#fbe7e8;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--serif:"Instrument Serif",Georgia,serif;--mono:ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 15px/1.55 var(--sans)}
+.wrap{max-width:1000px;margin:0 auto;padding-inline:16px}
+a{color:inherit}
+em.s{font-family:var(--serif);font-style:italic;color:var(--red);font-weight:400}
+.kick{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+code{font:12px/1.4 var(--mono);background:var(--grey);padding:1px 5px;border-radius:4px}
+.bar{position:sticky;top:0;z-index:5;background:var(--ink);color:#fff}
+.bar .wrap{display:flex;gap:18px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap}
+.bar a{text-decoration:none;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.75}
+.bar a:hover,.bar a:focus-visible{opacity:1}
+h1{font:500 clamp(30px,4.5vw,44px)/1.12 var(--sans);margin:10px 0 12px;letter-spacing:-.01em;text-wrap:balance}
+h2{font:500 clamp(22px,3vw,30px)/1.2 var(--sans);margin:6px 0 10px;text-wrap:balance}
+h3{font:600 16px/1.3 var(--sans);margin:0 0 6px}
+p{margin:0 0 10px;max-width:70ch}
+header{padding:36px 0 8px}
+section{padding:28px 0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:14px}
+.steps>div{background:var(--grey);padding:18px}
+.steps>div.dark{background:var(--ink);color:#fff}.steps>div.dark .kick{color:#aaa}
+.steps>div.red{background:var(--red);color:#fff}.steps>div.red .kick{color:#ffd9db}
+.block{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:18px 0}
+.block>.head{padding:18px 22px;background:var(--grey);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between}
+.block>.head>*{min-width:0}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 22px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.f{width:26%;font:13px/1.4 var(--mono);color:var(--red)}
+td.v{white-space:pre-wrap}
+td.c{width:1%;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.sub{padding:14px 22px 6px;border-top:1px solid var(--line)}
+button.cp{font:600 11px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:999px;padding:7px 11px;cursor:pointer}
+button.cp:hover,button.cp:focus-visible{border-color:var(--red);color:var(--red);outline:none}
+button.cp.ok{background:var(--red);border-color:var(--red);color:#fff}
+.note{border-left:3px solid var(--red);padding:2px 0 2px 12px;margin:14px 0 0;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tile{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg)}
+footer{padding:28px 0 48px;color:var(--muted);font-size:13px}
+@media (max-width:600px){th,td{padding:10px 14px}.block>.head,.sub{padding-inline:14px}td.f{width:34%}}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:14px}
+.stats>div{background:var(--grey);padding:16px}.stats b{display:block;font:500 30px/1.1 var(--sans);color:var(--red)}
+td.n{width:1%;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)} .m{color:var(--muted);font-size:12px}
+ul.l{margin:6px 0 0;padding-left:20px} ul.l li{margin:0 0 6px}
+</style></head><body>
+<div class="bar"><div class="wrap"><a href="../">All guides</a><a href="#summary">Summary</a><a href="#detail">What was filled</a><a href="#guides">Guides</a><a href="#left">Still left</a></div></div>
+<header><div class="wrap"><div class="kick">Work log · 2–3 Nov 2026</div>
+<h1>Filling the <em class="s">live CMS</em> from the reference site</h1>
+<p>Every single page of the site (programmes and schools excluded) was compared with the hardcoded reference, <a href="https://cu-lkn-hardcoded-reference.vercel.app" target="_blank" rel="noopener">cu-lkn-hardcoded-reference.vercel.app</a>. The CMS fields that were empty were then filled with the reference's text and photos.</p>
+<p class="note">All changes are saved as <b>drafts</b>. Only empty fields were filled, and nothing an editor had written was overwritten. Nothing reaches the website until each entry is <b>Published</b> and then <b>Publish to website</b> is pressed.</p>
+</div></header>
+<section id="summary"><div class="wrap"><div class="kick">Summary</div><h2>Numbers</h2>
+<div class="stats"><div><b>258</b>fields filled</div><div><b>116</b>entries updated</div><div><b>146</b>photos uploaded</div><div><b>5</b>new admission offices</div><div><b>67</b>pages compared</div></div>
+<p style="margin-top:14px">New photos are in the Media Library folder <b>taco-bell</b>. If the CMS already had a photo, it was reused rather than uploaded again.</p>
+<h3 style="margin-top:18px">Highlights</h3><ul class="l">
+<li><b>About:</b> CU Edge sections, award highlights and regulator logos.</li>
+<li><b>Admissions:</b> the hub's glimpse photos, Admission Support, the "Explore the university" links, the overview steps, scholarship phases, Procedure to Apply (online and offline), the How to Apply step icons and the scholarship slab labels.</li>
+<li><b>Campus Life:</b> the panorama, all Events page fields, section photos on 9 facility pages, facility card links and hostel fact photos.</li>
+<li><b>Research:</b> the CRADLE and CAIRA sections, with photos.</li>
+<li><b>AI Features:</b> the AI Competencies tree (10 schools) and section photos on Smart Campus, Labs and AI-Fuelled Research.</li>
+<li><b>Academics:</b> section headings and labels (Professional Bodies, Teaching Practices, System of Evaluation), programme-specific assessment and photos for all 44 labs.</li>
+<li><b>Education Loan:</b> the 4 route fact cards and the FAQ tabs.</li>
+<li><b>Home:</b> Tradition, Why Choose CU, See Us In Action, Hero and Moments images and notes.</li>
+<li><b>Offices:</b> Srinagar, Dhanbad, Imphal, Chennai and Bangalore added, plus state photos on all office cards.</li></ul>
+</div></section>
+<section id="detail"><div class="wrap"><div class="kick">Detail</div><h2>Every field filled</h2>
+<div class="block"><div class="tbl"><table><thead><tr><th>CMS entry</th><th>Fields filled</th><th>#</th></tr></thead><tbody><tr><td><b>Page · Campus Life</b></td><td><code>events_heading</code><br><code>events_lede</code><br><code>events_hero_image</code><br><code>events_filters</code><br><code>events_per_page</code><br><code>hostel_facts_label</code><br><code>hostel_slideshow_play_label</code><br><code>hostel_slideshow_pause_label</code><br><code>panorama</code><br><code>panorama_label</code><br><code>panorama_slide_label_template</code><br><code>panorama_slide_roledescription</code><br><code>panorama_skip_label</code><br><code>panorama_skip_suffix</code><br><code>facilities</code> <span class="m">9 items</span><br><code>hostel_facts</code> <span class="m">6 items</span></td><td class="n">29</td></tr><tr><td><b>About page</b></td><td><code>award_highlights</code><br><code>core_values_note_image</code><br><code>awards_note_image</code><br><code>approvals_note_image</code><br><code>regulator_logos</code><br><code>cu_edge_spreads</code><br><code>cu_edge_points</code> <span class="m">3 items</span></td><td class="n">9</td></tr><tr><td><b>Page · Admissions</b></td><td><code>pathway_related</code><br><code>glimpse</code> <span class="m">4 items</span><br><code>support_heading</code> <span class="m">1 item</span><br><code>support_channels</code> <span class="m">3 items</span><br><code>overture_steps</code><br><code>edge_claims</code><br><code>scholarship_phases</code></td><td class="n">12</td></tr><tr><td><b>Page · Academics</b></td><td><code>about_the_schools_image</code><br><code>evaluation_by_programme</code><br><code>sections</code><br><code>labels</code></td><td class="n">4</td></tr><tr><td><b>Page · How to Apply</b></td><td><code>apply_modes</code><br><code>steps</code> <span class="m">6 items</span></td><td class="n">7</td></tr><tr><td><b>Page · Advanced Credit</b></td><td><code>key_features_image</code></td><td class="n">1</td></tr><tr><td><b>Data · Scholarship Scheme · A. Engineering UG programs (based on JEE-Mains rank)</b></td><td><code>cap</code><br><code>slab_band_label</code><br><code>slab_value_label</code></td><td class="n">3</td></tr><tr><td><b>Data · Scholarship Scheme · B. MBA (based on national level entrance exam)</b></td><td><code>cap</code><br><code>note</code><br><code>slab_caption</code><br><code>slab_band_label</code><br><code>slab_value_label</code><br><code>extra_slabs</code><br><code>extra_slab_band_label</code><br><code>extra_slab_value_label</code><br><code>extra_slab_caption</code></td><td class="n">9</td></tr><tr><td><b>Data · Scholarship Scheme · C. Undergraduate programs (based on 12th percentage)</b></td><td><code>cap</code><br><code>note</code><br><code>slab_caption</code><br><code>slab_band_label</code><br><code>slab_value_label</code><br><code>extra_slabs</code><br><code>extra_slab_band_label</code><br><code>extra_slab_value_label</code><br><code>extra_slab_caption</code></td><td class="n">9</td></tr><tr><td><b>Data · Scholarship Scheme · D. Lateral Entry Entrance Test programs (based on diploma marks)</b></td><td><code>cap</code><br><code>slab_band_label</code><br><code>slab_value_label</code></td><td class="n">3</td></tr><tr><td><b>Data · Scholarship Scheme · E. Postgraduate programs (based on graduation percentage)</b></td><td><code>cap</code><br><code>note</code><br><code>slab_band_label</code><br><code>slab_value_label</code></td><td class="n">4</td></tr><tr><td><b>Data · Scholarship Scheme · H. Architecture scholarship on NATA / JEE (Main) score</b></td><td><code>slab_band_label</code><br><code>slab_value_label</code></td><td class="n">2</td></tr><tr><td><b>Data · Scholarship Scheme · K. Sir C.V. Raman Scholarship Scheme</b></td><td><code>note</code><br><code>slab_band_label</code><br><code>slab_value_label</code></td><td class="n">3</td></tr><tr><td><b>Page · Leaf · /campus-life/student-clubs</b></td><td><code>gallery</code> <span class="m">2 items</span><br><code>chips</code> <span class="m">7 items</span></td><td class="n">9</td></tr><tr><td><b>Page · Education Loan</b></td><td><code>faq_tabs</code><br><code>routes</code> <span class="m">5 items</span></td><td class="n">6</td></tr><tr><td><b>Home · Programs</b></td><td><code>card_pictures</code><br><code>cu_logo_dark</code></td><td class="n">2</td></tr><tr><td><b>Data · Research Centre · Centre for Research and AI Development Learning Ecosystem</b></td><td><code>blocks</code> <span class="m">3 items</span></td><td class="n">3</td></tr><tr><td><b>Data · Research Centre · Centre for Artificial Intelligence Research and Applications</b></td><td><code>blocks</code> <span class="m">16 items</span></td><td class="n">16</td></tr><tr><td><b>Page · International</b></td><td><code>cohort_frames</code></td><td class="n">1</td></tr><tr><td><b>Home · Innovation</b></td><td><code>leaf_sections</code></td><td class="n">1</td></tr><tr><td><b>Page · Leaf · /campus-life/food-courts</b></td><td><code>blocks</code> <span class="m">3 items</span></td><td class="n">3</td></tr><tr><td><b>Page · Leaf · /campus-life/banking</b></td><td><code>blocks</code> <span class="m">2 items</span></td><td class="n">2</td></tr><tr><td><b>Page · Leaf · /campus-life/healthcare</b></td><td><code>blocks</code> <span class="m">3 items</span></td><td class="n">3</td></tr><tr><td><b>Page · Leaf · /campus-life/transportation</b></td><td><code>blocks</code> <span class="m">2 items</span></td><td class="n">2</td></tr><tr><td><b>Page · Leaf · /campus-life/laundry</b></td><td><code>blocks</code> <span class="m">3 items</span></td><td class="n">3</td></tr><tr><td><b>Page · Leaf · /campus-life/classrooms</b></td><td><code>blocks</code> <span class="m">3 items</span></td><td class="n">3</td></tr><tr><td><b>Page · Leaf · /campus-life/sports-and-fitness</b></td><td><code>blocks</code> <span class="m">4 items</span></td><td class="n">4</td></tr><tr><td><b>Page · Leaf · /campus-life/library-and-e-resources</b></td><td><code>blocks</code> <span class="m">2 items</span></td><td class="n">2</td></tr><tr><td><b>Page · Leaf · /ai-features/smart-campus-features</b></td><td><code>blocks</code> <span class="m">3 items</span></td><td class="n">3</td></tr><tr><td><b>Page · Leaf · /ai-features/ai-powered-labs-coes</b></td><td><code>blocks</code> <span class="m">2 items</span></td><td class="n">2</td></tr><tr><td><b>Page · Leaf · /ai-features/ai-fuelled-research</b></td><td><code>blocks</code> <span class="m">2 items</span></td><td class="n">2</td></tr><tr><td><b>Page · AI Features</b></td><td><code>competency_tree</code></td><td class="n">1</td></tr><tr><td><b>Home · Tradition</b></td><td><code>stats</code> <span class="m">4 items</span><br><code>film_poster</code><br><code>hexagon_background</code><br><code>lower_shadow_background</code></td><td class="n">7</td></tr><tr><td><b>Home · Moments</b></td><td><code>cards</code> <span class="m">3 items</span></td><td class="n">3</td></tr><tr><td><b>Home · Hero</b></td><td><code>fallback_image_medium</code></td><td class="n">1</td></tr><tr><td><b>Home · Why Choose CU</b></td><td><code>floral_image</code><br><code>background_image</code><br><code>fallback_photo</code></td><td class="n">3</td></tr><tr><td><b>Home · See Us In Action</b></td><td><code>grid_cell_image</code><br><code>shadow_image</code></td><td class="n">2</td></tr><tr><td><b>Data · Laboratory</b> (44 labs)</td><td><code>image</code>: one photo per lab on Futuristic Laboratories</td><td class="n">44</td></tr><tr><td><b>Data · Admission Office</b> (25 offices)</td><td><code>state_image</code>: state photo on each office card</td><td class="n">25</td></tr><tr><td><b>Site · Route</b> (10 pages)</td><td><code>hero_image</code>: How to apply, Scholarships, Admission criteria, Course Fees, Hostel Fees, Admission offices, Education loan, Advanced Credit Program, Frequently asked questions, Contact Us</td><td class="n">10</td></tr></tbody></table></div></div>
+</div></section>
+<section id="guides"><div class="wrap"><div class="kick">Also today</div><h2>Guides published</h2><ul class="l">
+<li><a href="../our-identity/">Our Identity</a>: Seal blocks with copy buttons.</li>
+<li><a href="../campus-life/">Campus Life</a>: where every part of the Campus Life pages is edited.</li>
+<li><a href="../admissions-video/">Admissions video</a>: how to show the Overview video on admission pages.</li></ul>
+<p>Site and CMS code pushed to main: the School <code>about_image</code> field, and WA image paths that now accept capital letters.</p>
+</div></section>
+<section id="left"><div class="wrap"><div class="kick">Next</div><h2>Still left</h2><div class="steps">
+<div class="red"><div class="kick">01</div><h3>Publish</h3><p>Publish every entry marked <b>Modified</b>, then press <b>Publish to website</b>.</p></div>
+<div><div class="kick">02</div><h3>Events</h3><p>97 of 133 events are unpublished drafts, so the site shows only 3. Review them (there are duplicates) and publish.</p></div>
+<div><div class="kick">03</div><h3>Team inputs</h3><p>Footer email and legal note, the new CUCET and hero countdown dates, designations for the 13 alumni, and a photo of Lav Kumar.</p></div>
+<div><div class="kick">04</div><h3>Re-check</h3><p>After the rebuild, compare every page against the reference again.</p></div>
+<div class="dark"><div class="kick">Later</div><h3>SEO</h3><p>Alt text and SEO fields, as agreed.</p></div>
+</div>
+<p class="note">Not changed on purpose: the Vision &amp; Mission points and the placement alumni. Your editors had replaced the reference's text with their own.</p>
+</div></section>
+<footer><div class="wrap">Generated from the write logs of this session, 3 Nov 2026. Programmes, schools, landing pages, Education Loan bank logos and SEO were out of scope.</div></footer>
+</body></html>
