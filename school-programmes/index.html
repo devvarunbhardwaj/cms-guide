@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>School Programmes Guide</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --red:#D7101A;--ink:#111;--grey:#f3f3f3;--line:#e6e6e6;--text:#222;--muted:#6b6b6b;--bg:#fff;--chip:#fbe7e8;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--serif:"Instrument Serif",Georgia,serif;--mono:ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 15px/1.55 var(--sans)}
+.wrap{max-width:1000px;margin:0 auto;padding-inline:16px}
+a{color:inherit}
+em.s{font-family:var(--serif);font-style:italic;color:var(--red);font-weight:400}
+.kick{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+code{font:12px/1.4 var(--mono);background:var(--grey);padding:1px 5px;border-radius:4px}
+.bar{position:sticky;top:0;z-index:5;background:var(--ink);color:#fff}
+.bar .wrap{display:flex;gap:18px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap}
+.bar a{text-decoration:none;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.75}
+.bar a:hover,.bar a:focus-visible{opacity:1}
+h1{font:500 clamp(30px,4.5vw,44px)/1.12 var(--sans);margin:10px 0 12px;letter-spacing:-.01em;text-wrap:balance}
+h2{font:500 clamp(22px,3vw,30px)/1.2 var(--sans);margin:6px 0 10px;text-wrap:balance}
+h3{font:600 16px/1.3 var(--sans);margin:0 0 6px}
+p{margin:0 0 10px;max-width:70ch}
+header{padding:36px 0 8px}
+section{padding:28px 0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:14px}
+.steps>div{background:var(--grey);padding:18px}
+.steps>div.dark{background:var(--ink);color:#fff}.steps>div.dark .kick{color:#aaa}
+.steps>div.red{background:var(--red);color:#fff}.steps>div.red .kick{color:#ffd9db}
+.block{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:18px 0}
+.block>.head{padding:18px 22px;background:var(--grey);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between}
+.block>.head>*{min-width:0}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 22px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.f{width:26%;font:13px/1.4 var(--mono);color:var(--red)}
+td.v{white-space:pre-wrap}
+td.c{width:1%;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.sub{padding:14px 22px 6px;border-top:1px solid var(--line)}
+button.cp{font:600 11px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:999px;padding:7px 11px;cursor:pointer}
+button.cp:hover,button.cp:focus-visible{border-color:var(--red);color:var(--red);outline:none}
+button.cp.ok{background:var(--red);border-color:var(--red);color:#fff}
+.note{border-left:3px solid var(--red);padding:2px 0 2px 12px;margin:14px 0 0;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tile{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg)}
+footer{padding:28px 0 48px;color:var(--muted);font-size:13px}
+@media (max-width:600px){th,td{padding:10px 14px}.block>.head,.sub{padding-inline:14px}td.f{width:34%}}
+.ex{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+.ex .tile h3{margin-bottom:8px}
+.ex ul{margin:0;padding-left:18px;font-size:14px}
+.ok{color:#137333;font-weight:600}.stop{color:var(--red);font-weight:600}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a href="../">All guides</a><a href="#idea">How it works</a><a href="#pick">Add programmes</a><a href="#slug">Slug</a><a href="#rules">Rules</a><a href="#publish">Publish</a><a href="#schools">Schools today</a></div></div>
+
+<header><div class="wrap">
+<div class="kick">CMS guide · Data · School · Programs · Slug</div>
+<h1>Schools choose their <em class="s">programmes</em></h1>
+<p>Each school now lists its own programmes. You pick them on the school, not on the programme.</p>
+<div class="steps">
+<div><div class="kick">Step 1</div><h3>Open the school</h3><p>Data · School</p></div>
+<div><div class="kick">Step 2</div><h3>Add programmes</h3><p>Programs field, in the order you want</p></div>
+<div class="dark"><div class="kick">Step 3</div><h3>Save + Publish</h3><p>The school entry</p></div>
+<div class="red"><div class="kick">Step 4</div><h3>Publish to website</h3><p>Left menu → Website</p></div>
+</div>
+</div></header>
+
+<section id="idea"><div class="wrap">
+<div class="kick">01</div>
+<h2>How it works</h2>
+<div class="grid">
+<div class="tile"><h3>School = what the website lists</h3><p>School pages, the schools on /programs and /academics, the school filter, breadcrumbs and "related programmes" all follow the school that picked the programme.</p></div>
+<div class="tile"><h3>Discipline = marketing, unchanged</h3><p>The programme's web address <code>/programs/&lt;discipline&gt;/&lt;programme&gt;</code> and the LeadSquared form still use Discipline. Moving a programme to another school never changes its address.</p></div>
+<div class="tile"><h3>Not picked yet?</h3><p>A programme no school has picked stays with the school of its discipline, as it is today. So nothing disappears while you work through the schools.</p></div>
+</div>
+<div class="ex">
+<div class="tile"><h3>Example</h3><ul>
+<li>B.Tech Biotechnology has Discipline <b>Biotechnology</b>.</li>
+<li>Add it to <b>School of Engineering → Programs</b>.</li>
+<li>It now shows on the School of Engineering page, with "School of Engineering" in its breadcrumb.</li>
+<li>Its address stays <code>/programs/biotechnology/btech-biotechnology-engineering</code>, and the form still pre-fills Biotechnology.</li>
+</ul></div>
+</div>
+</div></section>
+
+<section id="pick"><div class="wrap">
+<div class="kick">02</div>
+<h2>Add programmes to a school</h2>
+<p><a href="http://43.204.193.67/admin/content-manager/collection-types/api::school.school" target="_blank" rel="noopener"><b>Open Data · School ↗</b></a> and click the school.</p>
+<div class="block"><div class="head"><h3>Fields</h3><span class="kick">on Data · School</span></div><div class="tbl"><table><thead><tr><th>Field</th><th>What to put</th></tr></thead><tbody id="f"></tbody></table></div></div>
+<p>In <b>Programs</b>, type a programme name and pick it. Add all of the school's programmes. Drag them to set the order: the school page lists them in this order.</p>
+<p>Click <b>Save</b>, then <b>Publish</b> (top right).</p>
+<p class="note">Add every programme the school should show, not just the ones moving in. Programmes you have not picked yet still show (from their discipline) after the ones you picked.</p>
+<p class="note">A programme with <b>Show on website</b> off is skipped, even if a school picked it.</p>
+</div></section>
+
+<section id="slug"><div class="wrap">
+<div class="kick">03 · only when needed</div>
+<h2>Slug: the school page's address</h2>
+<p>Leave it empty and the school keeps its address today, <code>/programs/&lt;discipline&gt;</code>, e.g. <code>/programs/engineering</code>.</p>
+<p>Set it only when a school needs its own address: a new school, or two schools on the same discipline.</p>
+<div class="block"><div class="head"><h3>Example: School of Travel &amp; Tourism</h3><span class="kick">needs a Slug</span></div><div class="tbl"><table><thead><tr><th>Field</th><th>Value</th><th></th></tr></thead><tbody id="s"></tbody></table></div>
+<div class="sub"><p>It shares Hotel Management and Tourism with School of Hospitality, so today it has no page of its own. With this Slug it gets <code>/programs/school-of-travel-and-tourism</code>.</p></div></div>
+<p class="note">Lower-case words joined by hyphens. Changing a Slug later moves the page and breaks old links, so set it once.</p>
+</div></section>
+
+<section id="rules"><div class="wrap">
+<div class="kick">04</div>
+<h2>Rules checked on Publish to website</h2>
+<div class="block"><div class="tbl"><table><thead><tr><th>Situation</th><th>Result</th><th>Fix</th></tr></thead><tbody id="r"></tbody></table></div></div>
+<p class="note">"Stops" means nothing goes to the website and the message names the schools. The live site stays as it was.</p>
+</div></section>
+
+<section id="publish"><div class="wrap">
+<div class="kick">05</div>
+<h2>Publish to website</h2>
+<p>Left menu → <b>Website</b> → <b>Publish to website</b>. Changes are live in a few minutes.</p>
+<p>You can do the schools one at a time. Each publish shows how many programmes are still in no school.</p>
+</div></section>
+
+<section id="schools"><div class="wrap">
+<div class="kick">06</div>
+<h2>Schools today</h2>
+<div class="block"><div class="tbl"><table><thead><tr><th>School</th><th>Discipline</th><th>Page</th></tr></thead><tbody id="t"></tbody></table></div></div>
+</div></section>
+
+<footer><div class="wrap">CU Lucknow · CMS guide</div></footer>
+
+<script>
+function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function cp(v){const b=el("button","cp","Copy");b.type="button";b.onclick=async()=>{try{await navigator.clipboard.writeText(v)}catch(e){const t=document.createElement("textarea");t.value=v;document.body.appendChild(t);t.select();document.execCommand("copy");t.remove()}b.textContent="Copied";b.classList.add("ok");setTimeout(()=>{b.textContent="Copy";b.classList.remove("ok")},1200)};const td=el("td","c");td.appendChild(b);return td}
+function row(id,cells,copy){const tr=el("tr");cells.forEach((c,i)=>tr.appendChild(el("td",i===0?"f":"v",c)));if(copy!==undefined)tr.appendChild(copy?cp(copy):el("td","c",""));document.getElementById(id).appendChild(tr)}
+row("f",["Programs","The programmes this school offers, in page order. Optional."]);
+row("f",["Slug (optional)","The school page's address. Leave empty to keep today's."]);
+row("f",["Discipline","Leave as it is. Still used for the form and as the default address."]);
+row("s",["Slug","school-of-travel-and-tourism"],"school-of-travel-and-tourism");
+row("s",["Programs","Its travel and tourism programmes"],0);
+function rule(a,b,c,cls){const tr=el("tr");tr.appendChild(el("td","f",a));const t=el("td","v",b);t.classList.add(cls);tr.appendChild(t);tr.appendChild(el("td","v",c));document.getElementById("r").appendChild(tr)}
+rule("A programme picked by two schools","Stops","Remove it from one school","stop");
+rule("Two schools with the same Slug","Stops","Give each its own Slug","stop");
+rule("Programmes in no school yet","Publishes, lists them","Add them to a school when ready","ok");
+rule("Two schools on one discipline, no Slug","Publishes; the lower Order keeps the page","Give the other one a Slug","ok");
+rule("A school with no programmes picked","Publishes; shows its discipline's programmes","Nothing to fix","ok");
+rule("A school with no programmes at all (none picked, none in its discipline)","Publishes; the school has no page","Pick its programmes","ok");
+[["School of Basic and Applied Sciences","sciences"],["School of Architecture & Planning","architecture-and-planning"],["Biotechnology","biotechnology"],["School of Business","business"],["School of Commerce","commerce"],["School of Computer Science & Engineering","computer-science"],["School of Computing","computing"],["School of Design","design"],["School of Engineering","engineering"],["School of Hospitality","hotel-management-and-tourism"],["School of Media Studies","journalism-and-mass-communication"],["School of Legal Studies","legal-studies"],["School of Liberal Arts and Behavioral Sciences","liberal-arts"],["School of Pharmacy","pharmacy"]].forEach(([n,d])=>row("t",[n,d,d==="computer-science"?"none yet: pick its programmes":"/programs/"+d]));
+row("t",["School of Travel & Tourism","hotel-management-and-tourism","none yet: needs a Slug"]);
+</script>
+</body>
+</html>
